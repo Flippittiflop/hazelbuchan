@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 const clients = [
   { name: 'Client 1', logo: '/client-logo-1.svg' },

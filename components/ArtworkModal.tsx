@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { X } from 'lucide-react';
 import { useEffect } from 'react';
 

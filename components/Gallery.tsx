@@ -1,6 +1,6 @@
 "use client"
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useState, useMemo } from 'react';
 import ArtworkModal from './ArtworkModal';
 import { event as gaEvent } from '@/lib/analytics';

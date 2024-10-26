@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { Menu, X, Pen, Origami, StickyNote, Brush, Mail } from 'lucide-react';
 
 const NavLink = ({ href, children, icon: Icon, hoverColor }) => (

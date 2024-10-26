@@ -1,6 +1,6 @@
 "use client"
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import VideoHero from '@/components/VideoHero';

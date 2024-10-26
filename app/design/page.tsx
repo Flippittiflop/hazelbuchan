@@ -1,7 +1,7 @@
 "use client"
 
 import { Parallax } from 'react-parallax';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 const designWorks = [
   {
