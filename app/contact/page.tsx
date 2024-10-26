@@ -18,13 +18,13 @@ export default function Contact() {
       <h1 className="text-3xl font-bold mb-6">Contact Me</h1>
       
       <div className="flex justify-center space-x-6 mb-8">
-        <a href="https://www.instagram.com/artisthandle" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-600 transition-colors">
+        <a href="https://www.instagram.com/hazelbuchan" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-600 transition-colors">
           <Instagram size={24} className="transform transition-transform duration-300 hover:scale-200" />
         </a>
-        <a href="mailto:artist@example.com" className="text-gray-600 hover:text-red-600 transition-colors">
+        <a href="mailto:hazelmbuchan@gmail.com" className="text-gray-600 hover:text-red-600 transition-colors">
           <Mail size={24} className="transform transition-transform duration-300 hover:scale-200" />
         </a>
-        <a href="https://www.linkedin.com/in/artistprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
+        <a href="https://www.linkedin.com/in/hazelbuchan" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
           <Linkedin size={24} className="transform transition-transform duration-300 hover:scale-200" />
         </a>
       </div>

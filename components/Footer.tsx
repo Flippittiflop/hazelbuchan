@@ -1,6 +1,11 @@
+"use client"
+
 import Link from 'next/link';
+import { useState } from 'react';
+import CookieSettings from './CookieSettings';
 
 const Footer = () => {
+  const [isCookieSettingsOpen, setIsCookieSettingsOpen] = useState(false);
   const currentYear = new Date().getFullYear();
 
   return (
@@ -14,10 +19,19 @@ const Footer = () => {
             <Link href="/impressum" className="text-gray-600 hover:text-gray-800">Impressum</Link>
             <Link href="/privacy-policy" className="text-gray-600 hover:text-gray-800">Privacy Policy</Link>
             <Link href="/terms-and-conditions" className="text-gray-600 hover:text-gray-800">Terms and Conditions</Link>
-            <button className="text-gray-600 hover:text-gray-800">Manage Cookie Settings</button>
+            <button 
+              onClick={() => setIsCookieSettingsOpen(true)} 
+              className="text-gray-600 hover:text-gray-800"
+            >
+              Manage Cookie Settings
+            </button>
           </nav>
         </div>
       </div>
+      <CookieSettings 
+        isOpen={isCookieSettingsOpen} 
+        onClose={() => setIsCookieSettingsOpen(false)} 
+      />
     </footer>
   );
 };

@@ -1,0 +1,62 @@
+version: 0.2
+
+env:
+  variables:
+    NODE_ENV: production
+  parameter-store:
+    NEXT_PUBLIC_GA_MEASUREMENT_ID: /hbdesign/${ENV}/ga_measurement_id
+    AWS_S3_BUCKET: /hbdesign/${ENV}/s3_bucket
+    CLOUDFRONT_DISTRIBUTION_ID: /hbdesign/${ENV}/cloudfront_id
+    GITHUB_TOKEN: /hbdesign/github_token
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm ci
+
+  pre_build:
+    commands:
+      - echo "Running tests..."
+      - npm run test
+#      - npm run test:e2e
+#      - npm run validate-links
+      - |
+        if [ "${ENV}" = "prd" ]; then
+          VERSION=$(node -p "require('./package.json').version")
+          echo "Building version ${VERSION}"
+        fi
+
+  build:
+    commands:
+      - echo "Building the application..."
+      - npm run build
+      - |
+        if [ "${ENV}" = "prd" ]; then
+          # Create artifact for GitHub
+          tar -czf hbdesign-${VERSION}.tar.gz out/
+          # Upload to GitHub using REST API
+          curl -X POST \
+            -H "Authorization: token ${GITHUB_TOKEN}" \
+            -H "Content-Type: application/zip" \
+            --data-binary @hbdesign-${VERSION}.tar.gz \
+            "https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${VERSION}/assets?name=hbdesign-${VERSION}.tar.gz"
+        fi
+
+  post_build:
+    commands:
+      # Upload to S3
+      - aws s3 sync out/ s3://${AWS_S3_BUCKET}/ --delete
+      # Invalidate CloudFront cache
+      - aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
+
+artifacts:
+  base-directory: out
+  files:
+    - '**/*'
+
+cache:
+  paths:
+    - 'node_modules/**/*'
+    - '.next/cache/**/*'
