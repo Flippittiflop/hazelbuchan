@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Latest changes">
-      <change afterPath="$PROJECT_DIR$/public/favicon_android.webp" afterDir="false" />
+    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Fixed nextjs config issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/design/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ArtworkModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ArtworkModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ClientLogos.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ClientLogos.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Gallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/site.webmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/public/site.webmanifest" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +19,9 @@
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="0b2b2507-1420-417c-832f-521c0ce039ab" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 3
 }]]></component>
@@ -38,6 +32,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JavaScript Debug.index.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -55,6 +50,16 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/hazelbuchan/out/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -70,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729955115378</updated>
-      <workItem from="1729955117197" duration="6043000" />
+      <workItem from="1729955117197" duration="6876000" />
     </task>
     <task id="LOCAL-00001" summary="Stable website">
       <option name="closed" value="true" />
@@ -104,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729971249694</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed nextjs config issues">
+      <option name="closed" value="true" />
+      <created>1729972001482</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729972001482</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,7 +126,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Stable website" />
     <MESSAGE value="Latest changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Latest changes" />
+    <MESSAGE value="Fixed nextjs config issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed nextjs config issues" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
