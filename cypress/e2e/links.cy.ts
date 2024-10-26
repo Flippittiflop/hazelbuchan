@@ -31,7 +31,8 @@ describe('Link Checker', () => {
           cy.wrap($img)
             .should('be.visible')
             .and(($img) => {
-              expect($img[0].naturalWidth).to.be.greaterThan(0);
+              const imgElement = $img[0] as HTMLImageElement;
+              expect(imgElement[0].naturalWidth).to.be.greaterThan(0);
             });
         });
       });
