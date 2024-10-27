@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "src": "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+      "alt": "Minimalist Logo Design",
+      "title": "Minimalist Logo Design",
+      "date": "2024-03-10",
+      "description": "A clean and modern logo design for a tech startup."
+    },
+    {
+      "id": 2,
+      "src": "https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "alt": "Vibrant Poster Series",
+      "title": "Vibrant Poster Series",
+      "date": "2024-02-20",
+      "description": "A series of colorful posters for a music festival."
+    },
+    {
+      "id": 3,
+      "src": "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80",
+      "alt": "UI/UX Design for Mobile App",
+      "title": "UI/UX Design for Mobile App",
+      "date": "2024-01-30",
+      "description": "A sleek and intuitive user interface design for a fitness tracking app."
+    }
+  ]
+}

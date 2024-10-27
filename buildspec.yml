@@ -8,7 +8,7 @@ env:
     AWS_S3_BUCKET: /CodeBuild/hbdesign/${ENV}/s3_bucket
     CLOUDFRONT_DISTRIBUTION_ID: /CodeBuild/hbdesign/${ENV}/cloudfront_id
     GITHUB_TOKEN: /hbdesign/github_token
-
+    GALLERY_BUCKET_NAME: /CodeBuild/hbdesign/${ENV}/gallery_bucket
 phases:
   install:
     runtime-versions:
@@ -32,6 +32,12 @@ phases:
         cat << EOF > .env.production
         NEXT_PUBLIC_GA_MEASUREMENT_ID=${NEXT_PUBLIC_GA_MEASUREMENT_ID}
         EOF
+        export GALLERY_BUCKET_NAME=${GALLERY_BUCKET_NAME}
+        export GALLERY_PREFIX="gallery"
+      - npm run sync-gallery -- paper-events
+      - npm run sync-gallery -- illustration
+      - npm run sync-gallery -- design
+      - npm run sync-gallery -- paper-advertising
 
   build:
     commands:

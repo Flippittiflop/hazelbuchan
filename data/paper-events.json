@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "src": "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb",
+      "alt": "Paper Lantern Festival",
+      "title": "Paper Lantern Festival",
+      "date": "2024-03-01",
+      "description": "A magical paper lantern installation created for a summer festival, bringing light and wonder to the event."
+    },
+    {
+      "id": 2,
+      "src": "https://images.unsplash.com/photo-1530982011887-3cc11cc85693",
+      "alt": "Origami Wedding Decor",
+      "title": "Origami Wedding Decor",
+      "date": "2024-02-15",
+      "description": "Elegant origami decorations designed for a wedding, adding a unique and personal touch to the celebration."
+    },
+    {
+      "id": 3,
+      "src": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205",
+      "alt": "Paper Flower Wall",
+      "title": "Paper Flower Wall",
+      "date": "2024-01-20",
+      "description": "A stunning paper flower wall created as a backdrop for a fashion show, combining beauty and sustainability."
+    }
+  ]
+}

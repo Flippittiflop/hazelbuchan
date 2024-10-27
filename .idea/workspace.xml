@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="build and deploy">
+    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Added pre-build for google measurement_id">
+      <change afterPath="$PROJECT_DIR$/data/design.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/illustration.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/paper-advertising.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/paper-events.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/sync-gallery-images.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/e2e/links.cy.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/screenshots/links.cy.ts/Link Checker -- Page -- should not have any broken images (failed).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/screenshots/links.cy.ts/Link Checker -- Page contact -- should not have any broken links (failed).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/screenshots/links.cy.ts/Link Checker -- Page design -- should not have any broken images (failed).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/screenshots/links.cy.ts/Link Checker -- Page paper-advertising -- should not have any broken images (failed).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/screenshots/links.cy.ts/Link Checker -- Page paper-events -- should not have any broken images (failed).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/support/e2e.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/illustration/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/illustration/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/paper-advertising/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/paper-advertising/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/paper-events/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/paper-events/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildspec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/buildspec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +31,7 @@
     <option name="defaultAccountId" value="0b2b2507-1420-417c-832f-521c0ce039ab" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -38,23 +41,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.index.html (1).executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.index.html (2).executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/jonathanbuchan/WebstormProjects/hazelbuchan/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.index.html (1).executor": "Run",
+    "JavaScript Debug.index.html (2).executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/jonathanbuchan/WebstormProjects/hazelbuchan",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "ts.external.directory.path": "/Users/jonathanbuchan/WebstormProjects/hazelbuchan/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$" />
@@ -94,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729955115378</updated>
       <workItem from="1729955117197" duration="7129000" />
-      <workItem from="1730013163613" duration="6106000" />
+      <workItem from="1730013163613" duration="15268000" />
     </task>
     <task id="LOCAL-00001" summary="Stable website">
       <option name="closed" value="true" />
@@ -184,7 +191,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730018825521</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Removed cypress for now">
+      <option name="closed" value="true" />
+      <created>1730019330031</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1730019330031</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added pre-build for google measurement_id">
+      <option name="closed" value="true" />
+      <created>1730037701081</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1730037701081</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +222,9 @@
     <MESSAGE value="Installing jest for testing" />
     <MESSAGE value="Changed jest.config file" />
     <MESSAGE value="build and deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="build and deploy" />
+    <MESSAGE value="Removed cypress for now" />
+    <MESSAGE value="Added pre-build for google measurement_id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added pre-build for google measurement_id" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
