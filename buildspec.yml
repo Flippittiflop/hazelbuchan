@@ -24,6 +24,15 @@ phases:
 #      - npm run test:e2e
 #      - npm run validate-links
 
+  pre_build:
+    commands:
+      # Create environment file
+      - echo "Creating .env.production file..."
+      - |
+        cat << EOF > .env.production
+        NEXT_PUBLIC_GA_MEASUREMENT_ID=${NEXT_PUBLIC_GA_MEASUREMENT_ID}
+        EOF
+
   build:
     commands:
       - echo "Building the application..."
