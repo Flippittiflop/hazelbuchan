@@ -22,27 +22,11 @@ phases:
       - npm run test
 #      - npm run test:e2e
 #      - npm run validate-links
-      - |
-        if [ "${ENV}" = "prd" ]; then
-          VERSION=$(node -p "require('./package.json').version")
-          echo "Building version ${VERSION}"
-        fi
 
   build:
     commands:
       - echo "Building the application..."
       - npm run build
-      - |
-        if [ "${ENV}" = "prd" ]; then
-          # Create artifact for GitHub
-          tar -czf hbdesign-${VERSION}.tar.gz out/
-          # Upload to GitHub using REST API
-          curl -X POST \
-            -H "Authorization: token ${GITHUB_TOKEN}" \
-            -H "Content-Type: application/zip" \
-            --data-binary @hbdesign-${VERSION}.tar.gz \
-            "https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${VERSION}/assets?name=hbdesign-${VERSION}.tar.gz"
-        fi
 
   post_build:
     commands:
