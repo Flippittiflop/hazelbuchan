@@ -60,6 +60,8 @@ async function syncGalleryImages(config) {
             Bucket: config.bucketName,
             Prefix: config.prefix,
         });
+        console.log('bucket'+config.bucketName);
+        console.log('prefix'+config.prefix);
 
         const response = await client.send(command);
 
