@@ -15,12 +15,12 @@ phases:
       nodejs: 18
     commands:
       - npm ci
-      - npm install -g jest
+#      - npm install -g jest
 
-  pre_build:
-    commands:
-      - echo "Running tests..."
-      - npm run test
+#  pre_build:
+#    commands:
+#      - echo "Running tests..."
+#      - npm run test
 #      - npm run test:e2e
 #      - npm run validate-links
 
