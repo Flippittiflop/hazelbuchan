@@ -1,27 +1,10 @@
-import { S3Client, ListObjectsV2Command, GetObjectCommand, HeadObjectCommand } from "@aws-sdk/client-s3";
-import { writeFileSync, mkdirSync, existsSync } from 'fs';
-import { join } from 'path';
-import { createWriteStream } from 'fs';
-import { Readable } from 'stream';
-import { finished } from 'stream/promises';
+const { S3Client, ListObjectsV2Command, GetObjectCommand, HeadObjectCommand } = require("@aws-sdk/client-s3");
+const { writeFileSync, mkdirSync, existsSync, createWriteStream } = require('fs');
+const { join } = require('path');
+const { Readable } = require('stream');
+const { finished } = require('stream/promises');
 
-interface GalleryItem {
-    id: number;
-    src: string;
-    alt: string;
-    title: string;
-    date: string;
-    description: string;
-}
-
-interface GalleryConfig {
-    bucketName: string;
-    prefix: string;
-    outputPath: string;
-    galleryType: string;
-}
-
-async function downloadImage(client: S3Client, bucket: string, key: string, outputPath: string): Promise<void> {
+async function downloadImage(client, bucket, key, outputPath) {
     const command = new GetObjectCommand({
         Bucket: bucket,
         Key: key,
@@ -30,12 +13,12 @@ async function downloadImage(client: S3Client, bucket: string, key: string, outp
     const response = await client.send(command);
     if (!response.Body) throw new Error('No body in response');
 
-    const body = response.Body as Readable;
+    const body = response.Body;
     const writer = createWriteStream(outputPath);
     await finished(body.pipe(writer));
 }
 
-async function getObjectMetadata(client: S3Client, bucket: string, key: string) {
+async function getObjectMetadata(client, bucket, key) {
     const command = new HeadObjectCommand({
         Bucket: bucket,
         Key: key,
@@ -58,12 +41,11 @@ async function getObjectMetadata(client: S3Client, bucket: string, key: string) 
     }
 }
 
-async function syncGalleryImages(config: GalleryConfig): Promise<void> {
+async function syncGalleryImages(config) {
     const client = new S3Client({});
-    const galleryItems: GalleryItem[] = [];
+    const galleryItems = [];
     let id = 1;
 
-    // Ensure output directories exist
     const publicGalleryPath = join(process.cwd(), 'public', 'gallery', config.galleryType);
     const dataPath = join(process.cwd(), 'data');
 
@@ -89,20 +71,16 @@ async function syncGalleryImages(config: GalleryConfig): Promise<void> {
         for (const object of response.Contents) {
             if (!object.Key) continue;
 
-            // Skip if not an image
             if (!/\.(jpg|jpeg|png|gif|webp)$/i.test(object.Key)) continue;
 
             const filename = object.Key.split('/').pop();
             if (!filename) continue;
 
-            // Download image to public folder
             const outputImagePath = join(publicGalleryPath, filename);
             await downloadImage(client, config.bucketName, object.Key, outputImagePath);
 
-            // Get metadata
             const metadata = await getObjectMetadata(client, config.bucketName, object.Key);
 
-            // Add to gallery items
             galleryItems.push({
                 id: id++,
                 src: `/gallery/${config.galleryType}/${filename}`,
@@ -113,9 +91,8 @@ async function syncGalleryImages(config: GalleryConfig): Promise<void> {
             });
         }
 
-        // Write gallery data to JSON file
         const outputDataPath = join(dataPath, `${config.galleryType}.json`);
-        writeFileSync(outputDataPath, JSON.stringify(galleryItems, null, 2));
+        writeFileSync(outputDataPath, JSON.stringify({ items: galleryItems }, null, 2));
 
         console.log(`Successfully synced ${galleryItems.length} images for ${config.galleryType}`);
     } catch (error) {
@@ -124,11 +101,10 @@ async function syncGalleryImages(config: GalleryConfig): Promise<void> {
     }
 }
 
-// Run the sync if called directly
 if (require.main === module) {
     const galleryType = process.argv[2];
     const bucketName = process.env.GALLERY_BUCKET_NAME;
-    const prefix = process.env.GALLERY_PREFIX || 'galleries';  // Default to 'galleries'
+    const prefix = process.env.GALLERY_PREFIX || 'galleries';
 
     if (!galleryType || !bucketName) {
         console.error('Usage: GALLERY_BUCKET_NAME=mybucket [GALLERY_PREFIX=galleries] npm run sync-gallery -- gallery-type');
@@ -137,7 +113,7 @@ if (require.main === module) {
 
     syncGalleryImages({
         bucketName,
-        prefix: `${prefix}/${galleryType}/`,// Changed to use forward slash between prefix and galleryType
+        prefix: `${prefix}/${galleryType}/`,
         outputPath: `public/gallery/${galleryType}`,
         galleryType,
     }).catch(error => {
@@ -146,4 +122,4 @@ if (require.main === module) {
     });
 }
 
-export { syncGalleryImages, type GalleryConfig };
+module.exports = { syncGalleryImages };

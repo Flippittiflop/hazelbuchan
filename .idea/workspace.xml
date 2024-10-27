@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Added pre-build for google measurement_id">
-      <change afterPath="$PROJECT_DIR$/data/design.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/illustration.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/paper-advertising.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/paper-events.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/sync-gallery-images.ts" afterDir="false" />
+    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Attempting dynamically pulling images from S3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/design/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/illustration/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/illustration/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/paper-advertising/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/paper-advertising/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/paper-events/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/paper-events/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildspec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/buildspec.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/sync-gallery-images.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/sync-gallery-images.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/validate-links.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/validate-links.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729955115378</updated>
       <workItem from="1729955117197" duration="7129000" />
-      <workItem from="1730013163613" duration="15268000" />
+      <workItem from="1730013163613" duration="16417000" />
     </task>
     <task id="LOCAL-00001" summary="Stable website">
       <option name="closed" value="true" />
@@ -207,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730037701081</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Attempting dynamically pulling images from S3">
+      <option name="closed" value="true" />
+      <created>1730051519839</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1730051519839</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +223,8 @@
     <MESSAGE value="build and deploy" />
     <MESSAGE value="Removed cypress for now" />
     <MESSAGE value="Added pre-build for google measurement_id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added pre-build for google measurement_id" />
+    <MESSAGE value="Attempting dynamically pulling images from S3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Attempting dynamically pulling images from S3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

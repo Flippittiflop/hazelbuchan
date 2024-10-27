@@ -1,10 +1,10 @@
-import fetch from 'node-fetch';
-import fs from 'fs';
-import path from 'path';
-import { parse } from 'node-html-parser';
+const fs = require('fs');
+const path = require('path');
+const { parse } = require('node-html-parser');
 
-async function validateUrl(url: string): Promise<boolean> {
+async function validateUrl(url) {
   try {
+    const fetch = (await import('node-fetch')).default;
     const response = await fetch(url);
     return response.status < 400;
   } catch (error) {
@@ -12,11 +12,11 @@ async function validateUrl(url: string): Promise<boolean> {
   }
 }
 
-async function validateImageUrl(url: string): Promise<boolean> {
+async function validateImageUrl(url) {
   try {
+    const fetch = (await import('node-fetch')).default;
     const response = await fetch(url);
     const contentType = response.headers.get('content-type');
-    // Handle case where contentType might be null
     return response.status < 400 && Boolean(contentType && contentType.startsWith('image/'));
   } catch (error) {
     return false;
@@ -25,15 +25,15 @@ async function validateImageUrl(url: string): Promise<boolean> {
 
 async function main() {
   const projectRoot = process.cwd();
-  const errors: string[] = [];
+  const errors = [];
 
   // Validate image URLs in components and pages
-  const files = getAllFiles(projectRoot, ['.tsx', '.ts']);
-  
+  const files = getAllFiles(projectRoot, ['.tsx', '.ts', '.js', '.jsx']);
+
   for (const file of files) {
     const content = fs.readFileSync(file, 'utf-8');
     const imageUrls = content.match(/src=["'](https?:\/\/[^"']+)["']/g) || [];
-    
+
     for (const imageUrl of imageUrls) {
       const url = imageUrl.match(/["'](https?:\/\/[^"']+)["']/)?.[1];
       if (url) {
@@ -47,11 +47,11 @@ async function main() {
 
   // Validate links in markdown files
   const markdownFiles = getAllFiles(projectRoot, ['.md']);
-  
+
   for (const file of markdownFiles) {
     const content = fs.readFileSync(file, 'utf-8');
     const links = content.match(/\[([^\]]+)\]\(([^)]+)\)/g) || [];
-    
+
     for (const link of links) {
       const url = link.match(/\]\((https?:\/\/[^)]+)\)/)?.[1];
       if (url) {
@@ -72,14 +72,14 @@ async function main() {
   }
 }
 
-function getAllFiles(dir: string, extensions: string[]): string[] {
-  const files: string[] = [];
-  
+function getAllFiles(dir, extensions) {
+  const files = [];
+
   const entries = fs.readdirSync(dir, { withFileTypes: true });
-  
+
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
-    
+
     if (entry.isDirectory()) {
       if (!['node_modules', '.next', '.git'].includes(entry.name)) {
         files.push(...getAllFiles(fullPath, extensions));
@@ -88,8 +88,12 @@ function getAllFiles(dir: string, extensions: string[]): string[] {
       files.push(fullPath);
     }
   }
-  
+
   return files;
 }
 
-main().catch(console.error);
+if (require.main === module) {
+  main().catch(console.error);
+}
+
+module.exports = { validateUrl, validateImageUrl, getAllFiles };
