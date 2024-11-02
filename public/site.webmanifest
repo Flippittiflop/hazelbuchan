@@ -1,19 +1,19 @@
 {
-  "name": "HBDesign - Creative Portfolio",
-  "short_name": "HBDesign",
-  "description": "Explore the creative portfolio of HBDesign, featuring graphic design, paper art, and illustrations.",
+  "name": "Hazel Buchan - Creative Portfolio",
+  "short_name": "Hazel Buchan",
+  "description": "Explore the creative portfolio of Hazel Buchan, featuring graphic design, paper art, and illustrations.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "/favicon_android.webp",
+      "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/favicon_android.webp",
+      "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

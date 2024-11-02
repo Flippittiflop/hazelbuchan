@@ -50,13 +50,13 @@ const Navbar = () => {
             <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden bg-gray-200">
               <Image
                 src="https://via.placeholder.com/160?text=Logo"
-                alt="HBDesign Logo"
+                alt="Hazel Buchan Logo"
                 width={64}
                 height={64}
                 priority
               />
             </div>
-            <span className="ml-2 text-xl font-bold hidden md:inline">HBDesign</span>
+            <span className="ml-2 text-xl font-bold hidden md:inline">Hazel Buchan</span>
           </Link>
           
           <div className="hidden md:flex space-x-4" role="menubar">

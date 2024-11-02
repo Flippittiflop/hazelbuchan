@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
       <p>Last updated: {new Date().toLocaleDateString()}</p>
       
       <h2>1. Introduction</h2>
-      <p>HBDesign ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data and tell you about your privacy rights.</p>
+      <p>Hazel Buchan ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data and tell you about your privacy rights.</p>
       
       <h2>2. The data we collect about you</h2>
       <p>We may collect, use, store and transfer different kinds of personal data about you, including: Identity Data, Contact Data, Technical Data, Usage Data, and Marketing and Communications Data.</p>

@@ -10,14 +10,14 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'HBDesign - Creative Portfolio',
-    template: '%s | HBDesign'
+    default: 'Hazel Buchan - Creative Portfolio',
+    template: '%s | Hazel Buchan'
   },
-  description: 'Explore the creative portfolio of HBDesign, featuring graphic design, paper art, and illustrations.',
+  description: 'Explore the creative portfolio of Hazel Buchan, featuring graphic design, paper art, and illustrations.',
   keywords: ['design', 'paper art', 'illustration', 'creative portfolio', 'graphic design'],
-  authors: [{ name: 'HBDesign' }],
-  creator: 'HBDesign',
-  publisher: 'HBDesign',
+  authors: [{ name: 'Hazel Buchan' }],
+  creator: 'Hazel Buchan',
+  publisher: 'Hazel Buchan',
   formatDetection: {
     email: false,
     address: false,
@@ -26,16 +26,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.hbdesign.com',
-    title: 'HBDesign - Creative Portfolio',
-    description: 'Explore the creative portfolio of HBDesign, featuring graphic design, paper art, and illustrations.',
-    siteName: 'HBDesign',
+    url: 'https://www.hazelbuchan.co.za',
+    title: 'Hazel Buchan - Creative Portfolio',
+    description: 'Explore the creative portfolio of Hazel Buchan, featuring graphic design, paper art, and illustrations.',
+    siteName: 'Hazel Buchan',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HBDesign - Creative Portfolio',
-    description: 'Explore the creative portfolio of HBDesign, featuring graphic design, paper art, and illustrations.',
-    creator: '@hbdesign',
+    title: 'Hazel Buchan - Creative Portfolio',
+    description: 'Explore the creative portfolio of Hazel Buchan, featuring graphic design, paper art, and illustrations.',
+    creator: '@Hazel Buchan',
   },
   manifest: '/site.webmanifest',
 };

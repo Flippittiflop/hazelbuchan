@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "src": "https://images.unsplash.com/photo-1626785774573-4b799315345d",
+      "alt": "Paper Art Installation",
+      "title": "Paper Dreams",
+      "category": "Installation",
+      "date": "2024-03-15",
+      "description": "A large-scale paper art installation exploring themes of nature and sustainability"
+    },
+    {
+      "id": 2,
+      "src": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe",
+      "alt": "Digital Illustration",
+      "title": "Urban Fantasy",
+      "category": "Illustration",
+      "date": "2024-02-28",
+      "description": "A series of digital illustrations depicting magical urban landscapes"
+    },
+    {
+      "id": 3,
+      "src": "https://images.unsplash.com/photo-1561070791-2526d30994b5",
+      "alt": "Brand Identity Design",
+      "title": "Eco Brand",
+      "category": "Design",
+      "date": "2024-02-10",
+      "description": "Complete brand identity design for an eco-friendly product line"
+    }
+  ]
+}

@@ -1,71 +1,82 @@
 "use client"
 
-import { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
-const VideoHero = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+interface HeroContent {
+  heading: string;
+  subheading: string;
+  cta: {
+    text: string;
+    href: string;
+  };
+}
 
-  useEffect(() => {
-    let playPromise: Promise<void> | undefined;
+interface BackgroundImage {
+  src: string;
+  alt: string;
+  title: string;
+}
 
-    if (videoRef.current) {
-      playPromise = videoRef.current.play();
+interface VideoHeroProps {
+  backgroundImage: BackgroundImage;
+  content: HeroContent;
+}
 
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          if (error.name !== 'AbortError') {
-            console.error('Video playback error:', error);
-          }
-        });
-      }
-    }
-
-    return () => {
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          if (videoRef.current) {
-            videoRef.current.pause();
-          }
-        }).catch(() => {
-          // Ignore any errors during cleanup
-        });
-      }
-    };
-  }, []);
-
+const VideoHero = ({ backgroundImage, content }: VideoHeroProps) => {
   return (
-    <section 
-      className="relative h-[50vh] md:h-[70vh] overflow-hidden"
-      role="banner"
-      aria-label="Welcome section with background video"
-    >
-      <video
-        ref={videoRef}
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-        aria-hidden="true"
+      <section
+          className="relative h-[70vh] overflow-hidden"
+          role="banner"
+          aria-label="Welcome section"
       >
-        <source src="/hero-video.mp4" type="video/mp4" />
-        <track 
-          kind="captions" 
-          src="/hero-video-captions.vtt" 
-          srcLang="en" 
-          label="English captions"
-        />
-      </video>
-      <div 
-        className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"
-        aria-hidden="true"
-      >
-        <div className="text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to My Artistic World</h1>
-          <p className="text-xl md:text-2xl">Exploring creativity through various mediums</p>
+        <div className="absolute inset-0">
+          <Image
+              src={backgroundImage.src}
+              alt={backgroundImage.alt}
+              layout="fill"
+              objectFit="cover"
+              priority
+              className="transform scale-105"
+          />
         </div>
-      </div>
-    </section>
+        <div
+            className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+            aria-hidden="true"
+        >
+          <div className="text-center text-white px-4">
+            <motion.h1
+                className="text-4xl md:text-6xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+            >
+              {content.heading}
+            </motion.h1>
+            <motion.p
+                className="text-xl md:text-2xl max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              {content.subheading}
+            </motion.p>
+            <motion.div
+                className="mt-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <a
+                  href={content.cta.href}
+                  className="inline-block bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all transform hover:scale-105"
+              >
+                {content.cta.text}
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
   );
 };
 

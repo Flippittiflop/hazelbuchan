@@ -70,7 +70,12 @@ async function syncGalleryImages(config) {
             return;
         }
 
-        for (const object of response.Contents) {
+        // Sort objects by LastModified in descending order
+        const sortedObjects = response.Contents.sort((a, b) =>
+            new Date(b.LastModified) - new Date(a.LastModified)
+        );
+
+        for (const object of sortedObjects) {
             if (!object.Key) continue;
 
             if (!/\.(jpg|jpeg|png|gif|webp)$/i.test(object.Key)) continue;
