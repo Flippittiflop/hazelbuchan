@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <div className="space-y-8">
             <VideoHero
-                backgroundImage={heroData.backgroundImage}
+                backgroundImages={heroData.backgroundImages}
                 content={heroData.content}
             />
             <About content={aboutData.content} />

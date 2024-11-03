@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Menu, X, Pen, Origami, StickyNote, Brush, Mail } from 'lucide-react';
 
 const NavLink = ({ href, children, icon: Icon, hoverColor }) => (
@@ -43,18 +43,21 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50" role="navigation" aria-label="Main navigation">
+    (<nav className="bg-white shadow-md sticky top-0 z-50" role="navigation" aria-label="Main navigation">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center" aria-label="Go to homepage">
             <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden bg-gray-200">
               <Image
-                src="https://via.placeholder.com/160?text=Logo"
+                src="assets/nav/HB_Logo.webp"
                 alt="Hazel Buchan Logo"
                 width={64}
                 height={64}
                 priority
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </div>
             <span className="ml-2 text-xl font-bold hidden md:inline">Hazel Buchan</span>
           </Link>
@@ -80,7 +83,6 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-      
       {isOpen && (
         <div 
           className="md:hidden" 
@@ -104,7 +106,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </nav>
+    </nav>)
   );
 };
 

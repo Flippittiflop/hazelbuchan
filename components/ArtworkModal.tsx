@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { X } from 'lucide-react';
 import { useEffect } from 'react';
 
@@ -31,7 +31,7 @@ const ArtworkModal: React.FC<ArtworkModalProps> = ({ artwork, onClose }) => {
   }, [onClose]);
 
   return (
-    <div 
+    (<div 
       className="fixed inset-0 bg-black z-50 overflow-hidden"
       role="dialog"
       aria-labelledby="modal-title"
@@ -61,11 +61,13 @@ const ArtworkModal: React.FC<ArtworkModalProps> = ({ artwork, onClose }) => {
               <Image
                 src={artwork.src}
                 alt={artwork.alt}
-                layout="fill"
-                objectFit="contain"
                 className="select-none"
                 priority
-              />
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: "contain"
+                }} />
             </div>
 
             {/* Description panel */}
@@ -94,7 +96,7 @@ const ArtworkModal: React.FC<ArtworkModalProps> = ({ artwork, onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>)
   );
 };
 

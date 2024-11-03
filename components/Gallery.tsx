@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useState, useMemo } from 'react';
 import ArtworkModal from './ArtworkModal';
 import { event as gaEvent } from '@/lib/analytics';
@@ -39,7 +39,7 @@ const Gallery: React.FC<GalleryProps> = ({ items }) => {
   }, [items, searchTerm]);
 
   return (
-    <div role="region" aria-label="Gallery">
+    (<div role="region" aria-label="Gallery">
       <div className="mb-4">
         <label htmlFor="search" className="sr-only">Search gallery</label>
         <input
@@ -74,12 +74,13 @@ const Gallery: React.FC<GalleryProps> = ({ items }) => {
             <Image
               src={item.src}
               alt={item.alt}
-              layout="fill"
-              objectFit="cover"
               className="group-hover:scale-110 transition-transform duration-300"
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               loading="lazy"
-            />
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              style={{
+                objectFit: "cover"
+              }} />
             <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <h3 className="text-white text-center text-lg font-semibold px-4">{item.title}</h3>
             </div>
@@ -97,7 +98,7 @@ const Gallery: React.FC<GalleryProps> = ({ items }) => {
           onClose={() => setSelectedArtwork(null)}
         />
       )}
-    </div>
+    </div>)
   );
 };
 

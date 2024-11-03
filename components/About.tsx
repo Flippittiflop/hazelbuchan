@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from 'framer-motion';
-import Image from 'next/image';
+import Image from "next/image";
 import { useRef } from 'react';
 
 interface AboutContent {
@@ -22,7 +22,7 @@ const About = ({ content }: AboutProps) => {
     const isAboutInView = useInView(aboutRef, { once: true });
 
     return (
-        <motion.section
+        (<motion.section
             ref={aboutRef}
             className="grid grid-cols-1 md:grid-cols-2 gap-8 py-6"
             initial={{ opacity: 0, x: 100 }}
@@ -42,14 +42,16 @@ const About = ({ content }: AboutProps) => {
                     <Image
                         src={content.image.src}
                         alt={content.image.alt}
-                        layout="fill"
-                        objectFit="cover"
                         className="rounded-full shadow-xl"
                         priority
-                    />
+                        fill
+                        sizes="100vw"
+                        style={{
+                            objectFit: "cover"
+                        }} />
                 </div>
             </div>
-        </motion.section>
+        </motion.section>)
     );
 };
 
