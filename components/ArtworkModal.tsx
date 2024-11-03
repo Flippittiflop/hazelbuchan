@@ -78,14 +78,14 @@ const ArtworkModal: React.FC<ArtworkModalProps> = ({ artwork, onClose }) => {
                 
                 {/* Additional details */}
                 <div className="mt-6 space-y-4">
-                  <div>
-                    <h4 className="font-medium text-gray-900">Dimensions</h4>
-                    <p className="text-gray-600">Variable dimensions</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900">Medium</h4>
-                    <p className="text-gray-600">Mixed media</p>
-                  </div>
+                  {/*<div>*/}
+                  {/*  <h4 className="font-medium text-gray-900">Dimensions</h4>*/}
+                  {/*  <p className="text-gray-600">Variable dimensions</p>*/}
+                  {/*</div>*/}
+                  {/*<div>*/}
+                  {/*  <h4 className="font-medium text-gray-900">Medium</h4>*/}
+                  {/*  <p className="text-gray-600">Mixed media</p>*/}
+                  {/*</div>*/}
                   <div>
                     <h4 className="font-medium text-gray-900">Year</h4>
                     <p className="text-gray-600" data-testid="modal-details-date">{artwork.date}</p>

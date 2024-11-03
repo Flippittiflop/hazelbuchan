@@ -25,13 +25,13 @@ interface VideoHeroProps {
 }
 
 const VideoHero = ({ backgroundImages, content }: VideoHeroProps) => {
-  const [opacity, setOpacity] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Image transition
+    // Simple image rotation every 10 seconds
     const interval = setInterval(() => {
-      setOpacity((prev) => (prev === 0 ? 1 : 0));
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
     }, 10000);
 
     // Trigger content animation after a short delay
@@ -43,7 +43,7 @@ const VideoHero = ({ backgroundImages, content }: VideoHeroProps) => {
       clearInterval(interval);
       clearTimeout(timeout);
     };
-  }, []);
+  }, [backgroundImages.length]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -68,6 +68,11 @@ const VideoHero = ({ backgroundImages, content }: VideoHeroProps) => {
     }
   };
 
+  // Ensure we have at least one image
+  if (backgroundImages.length === 0) {
+    return null;
+  }
+
   return (
       <section
           className="relative h-[70vh] overflow-hidden"
@@ -76,26 +81,13 @@ const VideoHero = ({ backgroundImages, content }: VideoHeroProps) => {
       >
         <div className="absolute inset-0">
           <Image
-              src={backgroundImages[0].src}
-              alt={backgroundImages[0].alt}
+              src={backgroundImages[currentImageIndex].src}
+              alt={backgroundImages[currentImageIndex].alt}
               layout="fill"
               objectFit="cover"
               priority
               className="transform scale-105"
           />
-          <div
-              className="absolute inset-0 transition-opacity duration-[2000ms] ease-in-out"
-              style={{ opacity }}
-          >
-            <Image
-                src={backgroundImages[1].src}
-                alt={backgroundImages[1].alt}
-                layout="fill"
-                objectFit="cover"
-                priority
-                className="transform scale-105"
-            />
-          </div>
         </div>
         <div
             className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"

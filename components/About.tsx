@@ -24,7 +24,7 @@ const About = ({ content }: AboutProps) => {
     return (
         (<motion.section
             ref={aboutRef}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 py-6"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4"
             initial={{ opacity: 0, x: 100 }}
             animate={isAboutInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
             transition={{ duration: 0.5 }}

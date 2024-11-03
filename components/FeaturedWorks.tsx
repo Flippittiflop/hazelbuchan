@@ -52,8 +52,18 @@ const FeaturedWorks = ({ items }: FeaturedWorksProps) => {
                                 className="transform transition-transform duration-300 group-hover:scale-110"
                                 loading={index <= 2 ? "eager" : "lazy"}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            {/* Gradient overlay - visible on mobile, hover on desktop */}
+                            <div
+                                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent
+                          opacity-100 transition-opacity duration-300
+                          sm:opacity-0 sm:group-hover:opacity-100"
+                            />
+                            {/* Content overlay - visible on mobile, hover on desktop */}
+                            <div
+                                className="absolute bottom-0 left-0 right-0 p-6 text-white
+                          transform translate-y-0 transition-transform duration-300
+                          sm:translate-y-full sm:group-hover:translate-y-0"
+                            >
                                 <div className="space-y-2">
                   <span className="inline-block px-2 py-1 text-sm font-medium bg-white/20 rounded-full backdrop-blur-sm">
                     {work.category}

@@ -29,7 +29,9 @@ async function getObjectMetadata(client, bucket, key) {
         return {
             title: response.Metadata?.['title'] || 'No Title',
             description: response.Metadata?.['description'] || 'No Description',
+            category: response.Metadata?.['category'] || 'No Category',
             date: response.LastModified?.toISOString().split('T')[0] || new Date().toISOString().split('T')[0],
+            sequence: response.Metadata?.['sequence'] || 99,
         };
     } catch (error) {
         console.error(`Error fetching metadata for ${key}:`, error);
@@ -37,6 +39,8 @@ async function getObjectMetadata(client, bucket, key) {
             title: 'No Title',
             description: 'No Description',
             date: new Date().toISOString().split('T')[0],
+            category: 'No Category',
+            sequence: 99,
         };
     }
 }
@@ -93,8 +97,10 @@ async function syncGalleryImages(config) {
                 src: `/gallery/${config.galleryType}/${filename}`,
                 alt: metadata.title,
                 title: metadata.title,
+                category: metadata.category,
                 date: metadata.date,
                 description: metadata.description,
+                sequence: metadata.sequence,
             });
         }
 
@@ -111,16 +117,15 @@ async function syncGalleryImages(config) {
 if (require.main === module) {
     const galleryType = process.argv[2];
     const bucketName = process.env.GALLERY_BUCKET_NAME;
-    const prefix = process.env.GALLERY_PREFIX || 'galleries';
 
     if (!galleryType || !bucketName) {
-        console.error('Usage: GALLERY_BUCKET_NAME=mybucket [GALLERY_PREFIX=galleries] npm run sync-gallery -- gallery-type');
+        console.error('Usage: GALLERY_BUCKET_NAME=mybucket npm run sync-gallery -- gallery-type');
         process.exit(1);
     }
 
     syncGalleryImages({
         bucketName,
-        prefix: `${prefix}/${galleryType}/`,
+        prefix: `${galleryType}/`,
         outputPath: `public/gallery/${galleryType}`,
         galleryType,
     }).catch(error => {
