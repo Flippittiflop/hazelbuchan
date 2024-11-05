@@ -72,7 +72,7 @@ const Navbar = () => {
             >
               <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden bg-gray-200">
                 <Image
-                    src="assets/nav/HB_Logo.webp"
+                    src="/assets/nav/HB_Logo.webp"
                     alt="Hazel Buchan Logo"
                     width={64}
                     height={64}
