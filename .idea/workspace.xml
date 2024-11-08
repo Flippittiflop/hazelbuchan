@@ -4,28 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Fixed issue with logo root path not being set correctly">
-      <change afterPath="$PROJECT_DIR$/app/events-decor/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/flower-rentals/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/paper-sculpture/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/EnquiryButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/EnquiryModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ImageModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ProductEnquiryForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ProductGrid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/events-decor.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/flower-rentals.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/paper-sculpture.json" afterDir="false" />
+    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Added flower rentals">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildspec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/buildspec.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/About.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/About.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ArtworkModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ArtworkModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/flower-rentals/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/flower-rentals/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ClientLogos.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ClientLogos.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/FeaturedWorks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedWorks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Gallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/VideoHero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/VideoHero.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/sync-gallery-images.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/sync-gallery-images.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +109,7 @@
       <workItem from="1730913359217" duration="604000" />
       <workItem from="1731003456578" duration="36000" />
       <workItem from="1731003503298" duration="2319000" />
-      <workItem from="1731088414702" duration="3677000" />
+      <workItem from="1731088414702" duration="4271000" />
     </task>
     <task id="LOCAL-00001" summary="Stable website">
       <option name="closed" value="true" />
@@ -305,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730827767421</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added flower rentals">
+      <option name="closed" value="true" />
+      <created>1731092583571</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1731092583571</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +320,8 @@
     <MESSAGE value="Test latest website build with automatic media uploads" />
     <MESSAGE value="Configured contact me form" />
     <MESSAGE value="Fixed issue with logo root path not being set correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with logo root path not being set correctly" />
+    <MESSAGE value="Added flower rentals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added flower rentals" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -28,10 +28,11 @@ async function getObjectMetadata(client, bucket, key, type = 'gallery') {
         const response = await client.send(command);
 
         if (type === 'products') {
+            const mediaType = /\.(mp4|webm|ogg)$/i.test(key) ? 'video' : 'image';
             return {
                 title: response.Metadata?.['title'] || 'No Title',
                 price: parseInt(response.Metadata?.['price']) || 0,
-                mediaType: response.Metadata?.['mediatype'] || 'image',
+                mediaType,
                 sequence: parseInt(response.Metadata?.['sequence']) || 99,
             };
         }
@@ -106,7 +107,7 @@ async function syncGalleryImages(config) {
         for (const object of sortedObjects) {
             if (!object.Key) continue;
 
-            if (!/\.(jpg|jpeg|png|gif|webp|mp4)$/i.test(object.Key)) continue;
+            if (!/\.(jpg|jpeg|png|gif|webp|mp4|webm|ogg)$/i.test(object.Key)) continue;
 
             const filename = object.Key.split('/').pop();
             if (!filename) continue;
