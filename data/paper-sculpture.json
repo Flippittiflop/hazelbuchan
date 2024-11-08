@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "src": "https://images.unsplash.com/photo-1622737133809-d95047b9e673",
+      "alt": "Paper Sculpture Installation",
+      "title": "Paper Sculpture Installation",
+      "date": "2024-03-05",
+      "description": "An innovative paper sculpture installation showcasing dimensional artistry."
+    },
+    {
+      "id": 2,
+      "src": "https://images.unsplash.com/photo-1586339949916-3e9457bef6d3",
+      "alt": "Dimensional Paper Art",
+      "title": "Dimensional Paper Art",
+      "date": "2024-02-25",
+      "description": "A unique dimensional paper art piece creating depth and visual interest."
+    },
+    {
+      "id": 3,
+      "src": "https://images.unsplash.com/photo-1574096079513-d8259312b785",
+      "alt": "Paper Art Installation",
+      "title": "Paper Art Installation",
+      "date": "2024-02-05",
+      "description": "A large-scale paper art installation combining technique and creativity."
+    }
+  ]
+}

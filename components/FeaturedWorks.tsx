@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from 'framer-motion';
-import Image from 'next/image';
+import Image from "next/image";
 import { useRef } from 'react';
 
 interface FeaturedWork {
@@ -23,7 +23,7 @@ const FeaturedWorks = ({ items }: FeaturedWorksProps) => {
     const isWorksInView = useInView(worksRef, { once: true, margin: "-100px" });
 
     return (
-        <section ref={worksRef} id="featured-works" className="py-4 space-y-4">
+        (<section ref={worksRef} id="featured-works" className="py-4 space-y-4">
             <div className="container mx-auto px-4">
                 <motion.h2
                     className="text-2xl font-semibold"
@@ -45,13 +45,14 @@ const FeaturedWorks = ({ items }: FeaturedWorksProps) => {
                             <Image
                                 src={work.src}
                                 alt={work.alt}
-                                layout="fill"
-                                objectFit="cover"
-                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                                 quality={85}
                                 className="transform transition-transform duration-300 group-hover:scale-110"
                                 loading={index <= 2 ? "eager" : "lazy"}
-                            />
+                                fill
+                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                                style={{
+                                    objectFit: "cover"
+                                }} />
                             {/* Gradient overlay - visible on mobile, hover on desktop */}
                             <div
                                 className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent
@@ -78,7 +79,7 @@ const FeaturedWorks = ({ items }: FeaturedWorksProps) => {
                     ))}
                 </div>
             </div>
-        </section>
+        </section>)
     );
 };
 

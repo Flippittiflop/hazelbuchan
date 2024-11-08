@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import Image from "next/image";
 import { useState, useEffect } from 'react';
 
 interface HeroContent {
@@ -74,61 +74,63 @@ const VideoHero = ({ backgroundImages, content }: VideoHeroProps) => {
   }
 
   return (
-      <section
-          className="relative h-[70vh] overflow-hidden"
-          role="banner"
-          aria-label="Welcome section"
+    (<section
+        className="relative h-[70vh] overflow-hidden"
+        role="banner"
+        aria-label="Welcome section"
+    >
+      <div className="absolute inset-0">
+        <Image
+          src={backgroundImages[currentImageIndex].src}
+          alt={backgroundImages[currentImageIndex].alt}
+          priority
+          className="transform scale-105"
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover"
+          }} />
+      </div>
+      <div
+          className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+          aria-hidden="true"
       >
-        <div className="absolute inset-0">
-          <Image
-              src={backgroundImages[currentImageIndex].src}
-              alt={backgroundImages[currentImageIndex].alt}
-              layout="fill"
-              objectFit="cover"
-              priority
-              className="transform scale-105"
-          />
-        </div>
-        <div
-            className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"
-            aria-hidden="true"
-        >
-          <AnimatePresence>
-            {isVisible && (
-                <motion.div
-                    className="text-center text-white px-4"
-                    initial="hidden"
-                    animate="visible"
-                    variants={containerVariants}
+        <AnimatePresence>
+          {isVisible && (
+              <motion.div
+                  className="text-center text-white px-4"
+                  initial="hidden"
+                  animate="visible"
+                  variants={containerVariants}
+              >
+                <motion.h1
+                    className="text-4xl md:text-6xl font-bold mb-6"
+                    variants={itemVariants}
                 >
-                  <motion.h1
-                      className="text-4xl md:text-6xl font-bold mb-6"
-                      variants={itemVariants}
+                  {content.heading}
+                </motion.h1>
+                <motion.p
+                    className="text-xl md:text-2xl max-w-2xl mx-auto"
+                    variants={itemVariants}
+                >
+                  {content.subheading}
+                </motion.p>
+                <motion.div
+                    className="mt-8"
+                    variants={itemVariants}
+                >
+                  <a
+                      href={content.cta.href}
+                      className="inline-block bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all transform hover:scale-105"
                   >
-                    {content.heading}
-                  </motion.h1>
-                  <motion.p
-                      className="text-xl md:text-2xl max-w-2xl mx-auto"
-                      variants={itemVariants}
-                  >
-                    {content.subheading}
-                  </motion.p>
-                  <motion.div
-                      className="mt-8"
-                      variants={itemVariants}
-                  >
-                    <a
-                        href={content.cta.href}
-                        className="inline-block bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all transform hover:scale-105"
-                    >
-                      {content.cta.text}
-                    </a>
-                  </motion.div>
+                    {content.cta.text}
+                  </a>
                 </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </section>
+              </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </section>)
   );
 };
 

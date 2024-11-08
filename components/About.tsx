@@ -23,12 +23,12 @@ const About = ({ content }: AboutProps) => {
 
     return (
         (<motion.section
-            ref={aboutRef}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4"
-            initial={{ opacity: 0, x: 100 }}
-            animate={isAboutInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-            transition={{ duration: 0.5 }}
-        >
+                ref={aboutRef}
+                className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4"
+                initial={{ opacity: 0, x: 100 }}
+                animate={isAboutInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+                transition={{ duration: 0.5 }}
+            >
             <div className="space-y-4">
                 <h2 className="text-2xl font-semibold">{content.title}</h2>
                 {content.paragraphs.map((paragraph, index) => (
@@ -47,7 +47,9 @@ const About = ({ content }: AboutProps) => {
                         fill
                         sizes="100vw"
                         style={{
-                            objectFit: "cover"
+                            objectFit: "cover",
+                            maxWidth: "100%",
+                            height: "auto"
                         }} />
                 </div>
             </div>

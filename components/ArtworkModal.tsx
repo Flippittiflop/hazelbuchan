@@ -32,11 +32,11 @@ const ArtworkModal: React.FC<ArtworkModalProps> = ({ artwork, onClose }) => {
 
   return (
     (<div 
-      className="fixed inset-0 bg-black z-50 overflow-hidden"
-      role="dialog"
-      aria-labelledby="modal-title"
-      aria-modal="true"
-    >
+        className="fixed inset-0 bg-black z-50 overflow-hidden"
+        role="dialog"
+        aria-labelledby="modal-title"
+        aria-modal="true"
+      >
       <div className="h-full w-full flex flex-col">
         {/* Header */}
         <div className="flex justify-between items-center p-4 bg-black bg-opacity-75">
@@ -66,7 +66,9 @@ const ArtworkModal: React.FC<ArtworkModalProps> = ({ artwork, onClose }) => {
                 fill
                 sizes="100vw"
                 style={{
-                  objectFit: "contain"
+                  objectFit: "contain",
+                  maxWidth: "100%",
+                  height: "auto"
                 }} />
             </div>
 

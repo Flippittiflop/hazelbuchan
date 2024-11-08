@@ -18,7 +18,7 @@ async function downloadImage(client, bucket, key, outputPath) {
     await finished(body.pipe(writer));
 }
 
-async function getObjectMetadata(client, bucket, key) {
+async function getObjectMetadata(client, bucket, key, type = 'gallery') {
     const command = new HeadObjectCommand({
         Bucket: bucket,
         Key: key,
@@ -26,15 +26,36 @@ async function getObjectMetadata(client, bucket, key) {
 
     try {
         const response = await client.send(command);
+
+        if (type === 'products') {
+            return {
+                title: response.Metadata?.['title'] || 'No Title',
+                price: parseInt(response.Metadata?.['price']) || 0,
+                mediaType: response.Metadata?.['mediatype'] || 'image',
+                sequence: parseInt(response.Metadata?.['sequence']) || 99,
+            };
+        }
+
+        // Default gallery metadata
         return {
             title: response.Metadata?.['title'] || 'No Title',
             description: response.Metadata?.['description'] || 'No Description',
             category: response.Metadata?.['category'] || 'No Category',
             date: response.LastModified?.toISOString().split('T')[0] || new Date().toISOString().split('T')[0],
-            sequence: response.Metadata?.['sequence'] || 99,
+            sequence: parseInt(response.Metadata?.['sequence']) || 99,
         };
     } catch (error) {
         console.error(`Error fetching metadata for ${key}:`, error);
+
+        if (type === 'products') {
+            return {
+                title: 'No Title',
+                price: 0,
+                mediaType: 'image',
+                sequence: 99,
+            };
+        }
+
         return {
             title: 'No Title',
             description: 'No Description',
@@ -47,7 +68,7 @@ async function getObjectMetadata(client, bucket, key) {
 
 async function syncGalleryImages(config) {
     const client = new S3Client({});
-    const galleryItems = [];
+    const items = [];
     let id = 1;
 
     const publicGalleryPath = join(process.cwd(), 'public', 'gallery', config.galleryType);
@@ -64,8 +85,8 @@ async function syncGalleryImages(config) {
             Bucket: config.bucketName,
             Prefix: config.prefix,
         });
-        console.log('bucket'+config.bucketName);
-        console.log('prefix'+config.prefix);
+        console.log('bucket: ' + config.bucketName);
+        console.log('prefix: ' + config.prefix);
 
         const response = await client.send(command);
 
@@ -74,15 +95,18 @@ async function syncGalleryImages(config) {
             return;
         }
 
-        // Sort objects by LastModified in descending order
-        const sortedObjects = response.Contents.sort((a, b) =>
-            new Date(b.LastModified) - new Date(a.LastModified)
-        );
+        // Sort objects by sequence number and LastModified
+        const sortedObjects = response.Contents.sort((a, b) => {
+            const seqA = parseInt(a.Metadata?.sequence) || 99;
+            const seqB = parseInt(b.Metadata?.sequence) || 99;
+            if (seqA !== seqB) return seqA - seqB;
+            return new Date(b.LastModified) - new Date(a.LastModified);
+        });
 
         for (const object of sortedObjects) {
             if (!object.Key) continue;
 
-            if (!/\.(jpg|jpeg|png|gif|webp)$/i.test(object.Key)) continue;
+            if (!/\.(jpg|jpeg|png|gif|webp|mp4)$/i.test(object.Key)) continue;
 
             const filename = object.Key.split('/').pop();
             if (!filename) continue;
@@ -90,24 +114,38 @@ async function syncGalleryImages(config) {
             const outputImagePath = join(publicGalleryPath, filename);
             await downloadImage(client, config.bucketName, object.Key, outputImagePath);
 
-            const metadata = await getObjectMetadata(client, config.bucketName, object.Key);
+            const metadata = await getObjectMetadata(client, config.bucketName, object.Key, config.type);
 
-            galleryItems.push({
-                id: id++,
-                src: `/gallery/${config.galleryType}/${filename}`,
-                alt: metadata.title,
-                title: metadata.title,
-                category: metadata.category,
-                date: metadata.date,
-                description: metadata.description,
-                sequence: metadata.sequence,
-            });
+            if (config.type === 'products') {
+                items.push({
+                    id: id++,
+                    title: metadata.title,
+                    price: metadata.price,
+                    mediaType: metadata.mediaType,
+                    mediaUrl: `/gallery/${config.galleryType}/${filename}`,
+                    sequence: metadata.sequence,
+                });
+            } else {
+                items.push({
+                    id: id++,
+                    src: `/gallery/${config.galleryType}/${filename}`,
+                    alt: metadata.title,
+                    title: metadata.title,
+                    category: metadata.category,
+                    date: metadata.date,
+                    description: metadata.description,
+                    sequence: metadata.sequence,
+                });
+            }
         }
 
-        const outputDataPath = join(dataPath, `${config.galleryType}.json`);
-        writeFileSync(outputDataPath, JSON.stringify({ items: galleryItems }, null, 2));
+        // Sort items by sequence
+        items.sort((a, b) => a.sequence - b.sequence);
 
-        console.log(`Successfully synced ${galleryItems.length} images for ${config.galleryType}`);
+        const outputDataPath = join(dataPath, `${config.galleryType}.json`);
+        writeFileSync(outputDataPath, JSON.stringify({ items }, null, 2));
+
+        console.log(`Successfully synced ${items.length} items for ${config.galleryType}`);
     } catch (error) {
         console.error('Error syncing gallery images:', error);
         throw error;
@@ -116,10 +154,11 @@ async function syncGalleryImages(config) {
 
 if (require.main === module) {
     const galleryType = process.argv[2];
+    const type = process.argv[3] || 'gallery'; // Default to gallery type if not specified
     const bucketName = process.env.GALLERY_BUCKET_NAME;
 
     if (!galleryType || !bucketName) {
-        console.error('Usage: GALLERY_BUCKET_NAME=mybucket npm run sync-gallery -- gallery-type');
+        console.error('Usage: GALLERY_BUCKET_NAME=mybucket npm run sync-gallery -- gallery-type [type]');
         process.exit(1);
     }
 
@@ -128,6 +167,7 @@ if (require.main === module) {
         prefix: `${galleryType}/`,
         outputPath: `public/gallery/${galleryType}`,
         galleryType,
+        type,
     }).catch(error => {
         console.error('Failed to sync gallery:', error);
         process.exit(1);

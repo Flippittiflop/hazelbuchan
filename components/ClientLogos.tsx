@@ -35,6 +35,8 @@ const ClientLogos = ({ items }: ClientLogosProps) => {
                   className="filter grayscale opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
                   style={{
                     maxWidth: "100%",
+                    height: "auto",
+                    maxWidth: "100%",
                     height: "auto"
                   }} />
               </a>
