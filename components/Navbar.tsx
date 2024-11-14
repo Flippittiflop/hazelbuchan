@@ -78,8 +78,7 @@ const Navbar = () => {
                 height={64}
                 priority
                 style={{
-                  maxWidth: "100%",
-                  height: "auto"
+                  maxWidth: "100%"
                 }} />
             </div>
             <span className="ml-2 text-xl font-bold hidden md:inline">Hazel Buchan</span>

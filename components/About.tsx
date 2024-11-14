@@ -48,8 +48,7 @@ const About = ({ content }: AboutProps) => {
                         sizes="100vw"
                         style={{
                             objectFit: "cover",
-                            maxWidth: "100%",
-                            height: "auto"
+                            maxWidth: "100%"
                         }} />
                 </div>
             </div>

@@ -1,28 +1,132 @@
 {
   "items": [
-    {
-      "id": 1,
-      "src": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe",
-      "alt": "Whimsical Forest Scene",
-      "title": "Whimsical Forest Scene",
-      "date": "2024-03-15",
-      "description": "A detailed illustration of a magical forest, featuring fantastical creatures and hidden surprises."
-    },
-    {
-      "id": 2,
-      "src": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5",
-      "alt": "Urban Landscape Sketch",
-      "title": "Urban Landscape Sketch",
-      "date": "2024-02-28",
-      "description": "A quick sketch capturing the essence of a bustling city street, with loose lines and vibrant energy."
-    },
-    {
-      "id": 3,
-      "src": "https://images.unsplash.com/photo-1613312328068-c9b6b76c9e8a",
-      "alt": "Character Design Study",
-      "title": "Character Design Study",
-      "date": "2024-02-10",
-      "description": "A series of character designs exploring different personalities and styles for a potential animation project."
-    }
+      {
+        "id": 23,
+        "src": "/gallery/illustration/10_billboard_illustration.jpg",
+        "alt": "Billboard Illustration",
+        "title": "Billboard Illustration",
+        "date": "2024-02-16",
+        "description": "An illustrated design crafted for a billboard display with striking visuals."
+      },
+      {
+        "id": 24,
+        "src": "/gallery/illustration/11_botanical_illustrations.jpg",
+        "alt": "Botanical Illustrations",
+        "title": "Botanical Illustrations",
+        "date": "2024-06-02",
+        "description": "Detailed botanical illustrations capturing the beauty of plant life."
+      },
+      {
+        "id": 25,
+        "src": "/gallery/illustration/13_landscape_pen_and_ink.jpg",
+        "alt": "Landscape Pen and Ink",
+        "title": "Landscape Pen and Ink",
+        "date": "2024-04-13",
+        "description": "A pen and ink illustration depicting a detailed landscape scene."
+      },
+      {
+        "id": 26,
+        "src": "/gallery/illustration/14_customised_editorial_illustrations.jpg",
+        "alt": "Customised Editorial Illustrations",
+        "title": "Customised Editorial Illustrations",
+        "date": "2023-11-29",
+        "description": "Custom editorial illustrations tailored for unique editorial pieces."
+      },
+      {
+        "id": 27,
+        "src": "/gallery/illustration/15_ILLUSTRATED_POP_UP.jpg",
+        "alt": "Illustrated Pop-Up",
+        "title": "Illustrated Pop-Up",
+        "date": "2024-03-20",
+        "description": "A pop-up illustration created for an interactive visual experience."
+      },
+      {
+        "id": 28,
+        "src": "/gallery/illustration/16_POP_UP_ILLUSTRATION.jpg",
+        "alt": "Pop-Up Illustration",
+        "title": "Pop-Up Illustration",
+        "date": "2024-01-05",
+        "description": "A unique pop-up illustration adding depth and interaction to the artwork."
+      },
+      {
+        "id": 29,
+        "src": "/gallery/illustration/18_tatoo_typography.jpg",
+        "alt": "Tattoo Typography",
+        "title": "Tattoo Typography",
+        "date": "2023-12-17",
+        "description": "Typography illustration inspired by tattoo designs with bold lettering."
+      },
+      {
+        "id": 30,
+        "src": "/gallery/illustration/1_customised_dog_portraits.jpg",
+        "alt": "Customised Dog Portraits",
+        "title": "Customised Dog Portraits",
+        "date": "2024-07-11",
+        "description": "Personalized dog portraits capturing the unique personalities of pets."
+      },
+      {
+        "id": 31,
+        "src": "/gallery/illustration/2_medical_editorial.jpg",
+        "alt": "Medical Editorial Illustration",
+        "title": "Medical Editorial Illustration",
+        "date": "2024-05-30",
+        "description": "Illustrations created for editorial content on medical topics."
+      },
+      {
+        "id": 32,
+        "src": "/gallery/illustration/3_wine_magazine_covers.jpg",
+        "alt": "Wine Magazine Covers",
+        "title": "Wine Magazine Covers",
+        "date": "2024-08-24",
+        "description": "Illustrated magazine covers designed for wine-themed publications."
+      },
+      {
+        "id": 33,
+        "src": "/gallery/illustration/4_nandos_postcard_illustrations.jpg",
+        "alt": "Nando's Postcard Illustrations",
+        "title": "Nando's Postcard Illustrations",
+        "date": "2023-12-10",
+        "description": "Illustrations designed for a series of Nando's promotional postcards."
+      },
+      {
+        "id": 34,
+        "src": "/gallery/illustration/5_nandos_postcard_illustrations.jpg",
+        "alt": "Nando's Postcard Illustrations",
+        "title": "Nando's Postcard Illustrations",
+        "date": "2024-03-09",
+        "description": "Another variation of Nando's postcard illustrations for branding."
+      },
+      {
+        "id": 35,
+        "src": "/gallery/illustration/6_watercolour_portraits.jpg",
+        "alt": "Watercolour Portraits",
+        "title": "Watercolour Portraits",
+        "date": "2024-07-29",
+        "description": "Portraits painted in watercolour, showcasing soft and delicate details."
+      },
+      {
+        "id": 36,
+        "src": "/gallery/illustration/7_customised_wine_label_portraits.jpg",
+        "alt": "Customised Wine Label Portraits",
+        "title": "Customised Wine Label Portraits",
+        "date": "2024-02-03",
+        "description": "Personalized portraits created for unique wine label designs."
+      },
+      {
+        "id": 37,
+        "src": "/gallery/illustration/8_animatic_illustrations.jpg",
+        "alt": "Animatic Illustrations",
+        "title": "Animatic Illustrations",
+        "date": "2024-06-08",
+        "description": "Illustrations designed for animation sequences in storyboarding."
+      },
+      {
+        "id": 38,
+        "src": "/gallery/illustration/9_chalk_board_illustrations.jpg",
+        "alt": "Chalk Board Illustrations",
+        "title": "Chalk Board Illustrations",
+        "date": "2023-11-15",
+        "description": "Illustrations created with a chalkboard effect for visual interest."
+      }
   ]
 }

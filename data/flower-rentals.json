@@ -2,24 +2,32 @@
   "items": [
     {
       "id": 1,
-      "title": "Cherry Blossom Tree",
-      "price": 2500,
+      "title": "White Fabric Flower",
+      "price": "Enquire",
       "mediaType": "image",
-      "mediaUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
+      "mediaUrl": "/gallery/flower-rentals/1_moving_fabric_flowers.jpg"
     },
     {
       "id": 2,
-      "title": "Rose Arch",
-      "price": 1800,
+      "title": "Blue Night Flower",
+      "price": "Enquire",
       "mediaType": "image",
-      "mediaUrl": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
+      "mediaUrl": "/gallery/flower-rentals/2_paper_rental.jpg"
     },
     {
       "id": 3,
-      "title": "Wisteria Canopy",
-      "price": 3200,
+      "title": "Red, White, Blue Flower",
+      "price": "Enquire",
       "mediaType": "image",
-      "mediaUrl": "https://images.unsplash.com/photo-1464982326199-86f32f81b211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
+      "mediaUrl": "/gallery/flower-rentals/3_flower_rental.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Blue, Pink, White Flower",
+      "price": "Enquire",
+      "mediaType": "image",
+      "mediaUrl": "/gallery/flower-rentals/4_flower_rental.jpg"
     }
   ]
 }
+

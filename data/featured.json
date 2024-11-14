@@ -1,31 +1,29 @@
 {
   "items": [
     {
-      "id": 1,
-      "src": "/gallery/featured/illustration_trees.jpg",
-      "alt": "Trees Illustration",
-      "title": "Watercolor Book Illustrations",
-      "category": "Illustration",
-      "date": "2024-03-15",
-      "description": "An illustration of different trees for a book"
+      "id": 20,
+      "src": "/gallery/featured/1_customised_animal_portraits.jpg",
+      "alt": "Customised Dog Portraits",
+      "title": "Customised Dog Portraits",
+      "date": "2024-05-04",
+      "description": "Unique dog portraits created with custom details for a personalized touch."
     },
     {
-      "id": 2,
-      "src": "/gallery/featured/paper_motorbike.jpg",
-      "alt": "Paper Motorbike",
-      "title": "SA Post Office Campaign",
-      "category": "Paper",
-      "date": "2024-02-28",
-      "description": "A paper motorbike model made from recycled paper"
+      "id": 21,
+      "src": "/gallery/featured/1_moving_fabric_flowers.jpg",
+      "alt": "Moving Fabric Flowers",
+      "title": "Moving Fabric Flowers",
+      "date": "2024-03-19",
+      "description": "Dynamic fabric flower decorations that add movement and elegance to decor."
     },
     {
-      "id": 3,
-      "src": "/gallery/featured/paper_nestle_cooking.jpg",
-      "alt": "Paper Cooking",
-      "title": "Nestle Campaign Ogilvy Healthworld",
-      "category": "Paper",
-      "date": "2024-02-10",
-      "description": "A child superimposed on a kitchen scene made of paper"
+      "id": 22,
+      "src": "/gallery/featured/7-3D_MODEL-TABLE DECOR.jpg",
+      "alt": "Macaw",
+      "title": "Paper Sculpture - Macaw",
+      "date": "2024-07-23",
+      "description": "A bird sculpture made from paper, capturing the vibrant colors of a macaw."
     }
   ]
+
 }

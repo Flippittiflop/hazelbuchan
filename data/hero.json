@@ -1,17 +1,12 @@
 {
   "items": [
     {
-      "src": "/gallery/hero/red_flower_wall.jpg",
-      "alt": "Creative workspace with art supplies",
-      "title": "Artist Workspace"
+      "src": "/gallery/hero/3-ALICE_IN_WONDERLAND_EXHIBITION_PIECE.jpg",
+      "alt": "Alice in Wonderland Exhibition Piece",
+      "title": "Alice in Wonderland Exhibition Piece"
     },
     {
       "src": "/gallery/hero/multi_colour_flower_wall.jpg",
-      "alt": "Secondary creative workspace",
-      "title": "Secondary Artist Workspace"
-    },
-    {
-      "src": "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634",
       "alt": "Secondary creative workspace",
       "title": "Secondary Artist Workspace"
     }

@@ -67,8 +67,7 @@ const ArtworkModal: React.FC<ArtworkModalProps> = ({ artwork, onClose }) => {
                 sizes="100vw"
                 style={{
                   objectFit: "contain",
-                  maxWidth: "100%",
-                  height: "auto"
+                  maxWidth: "100%"
                 }} />
             </div>
 

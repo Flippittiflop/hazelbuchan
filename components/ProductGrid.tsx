@@ -48,8 +48,7 @@ export default function ProductGrid({ products, onAddToEnquiry, selectedProductI
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-300"
                 style={{
-                  maxWidth: "100%",
-                  height: "auto"
+                  maxWidth: "100%"
                 }} />
             )}
             <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors duration-300" />

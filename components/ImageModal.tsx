@@ -40,8 +40,7 @@ export default function ImageModal({ isOpen, onClose, src, alt }: ImageModalProp
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
               style={{
-                maxWidth: "100%",
-                height: "auto"
+                maxWidth: "100%"
               }} />
           </div>
         </motion.div>

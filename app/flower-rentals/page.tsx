@@ -49,10 +49,37 @@ export default function FlowerRentals() {
 
     return (
         <div className="space-y-8">
-            <h1 className="text-3xl font-bold mb-4">Flower Rentals</h1>
-            <p className="text-gray-600 mb-8">
-                Browse our collection of premium artificial flowers and decorative pieces available for rent.
-            </p>
+            {/* Hero Video Section */}
+            <div className="relative w-full h-[70vh] overflow-hidden -mt-8">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                >
+                    <source src="/gallery/flower-rentals/night_flowers.mov" type="video/quicktime" />
+                    Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white p-4">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="text-4xl md:text-6xl font-bold mb-4 text-center"
+                    >
+                        Flower Rentals
+                    </motion.h1>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="text-xl md:text-2xl text-center max-w-2xl"
+                    >
+                        Transform your space with our premium artificial flowers and decorative pieces
+                    </motion.p>
+                </div>
+            </div>
 
             <EnquiryButton
                 count={selectedProducts.length}
@@ -80,11 +107,13 @@ export default function FlowerRentals() {
                 onSubmit={handleSubmitEnquiry}
             />
 
-            <ProductGrid
-                products={products}
-                onAddToEnquiry={handleAddToEnquiry}
-                selectedProductIds={selectedProducts.map(p => p.id)}
-            />
+            <div className="container mx-auto px-4">
+                <ProductGrid
+                    products={products}
+                    onAddToEnquiry={handleAddToEnquiry}
+                    selectedProductIds={selectedProducts.map(p => p.id)}
+                />
+            </div>
         </div>
     );
 }

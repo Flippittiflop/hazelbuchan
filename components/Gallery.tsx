@@ -80,8 +80,7 @@ const Gallery: React.FC<GalleryProps> = ({ items }) => {
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               style={{
                 objectFit: "cover",
-                maxWidth: "100%",
-                height: "auto"
+                maxWidth: "100%"
               }} />
             <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <h3 className="text-white text-center text-lg font-semibold px-4">{item.title}</h3>
