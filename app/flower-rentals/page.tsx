@@ -5,19 +5,33 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ProductGrid from '@/components/ProductGrid';
 import EnquiryModal from '@/components/EnquiryModal';
 import EnquiryButton from '@/components/EnquiryButton';
+import VideoHero from '@/components/VideoHero';
 import productsData from '@/data/flower-rentals.json';
 
-// Define the Product type to match the data structure
 type Product = {
     id: number;
     title: string;
-    price: number;
+    price: string;
     mediaType: "video" | "image";
     mediaUrl: string;
 };
 
-// Type assertion to ensure the imported data matches our Product type
 const products = productsData.items as Product[];
+
+const videoSources = [
+    {
+        src: "/videos/flower-rentals-hero.mp4",
+        type: "video/mp4"
+    }
+];
+// {
+//     src: "/videos/flower-rentals-hero.webm",
+//         type: "video/webm"
+// },
+// {
+//     src: "/videos/flower-rentals-hero.mov",
+//         type: "video/quicktime"
+// }
 
 export default function FlowerRentals() {
     const [selectedProducts, setSelectedProducts] = useState<Product[]>([]);
@@ -49,37 +63,7 @@ export default function FlowerRentals() {
 
     return (
         <div className="space-y-8">
-            {/* Hero Video Section */}
-            <div className="relative w-full h-[70vh] overflow-hidden -mt-8">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                >
-                    <source src="/gallery/flower-rentals/night_flowers.mov" type="video/quicktime" />
-                    Your browser does not support the video tag.
-                </video>
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white p-4">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-4xl md:text-6xl font-bold mb-4 text-center"
-                    >
-                        Flower Rentals
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-xl md:text-2xl text-center max-w-2xl"
-                    >
-                        Transform your space with our premium artificial flowers and decorative pieces
-                    </motion.p>
-                </div>
-            </div>
+            <VideoHero videoSources={videoSources} />
 
             <EnquiryButton
                 count={selectedProducts.length}

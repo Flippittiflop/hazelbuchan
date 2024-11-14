@@ -27,7 +27,7 @@ const About = ({ content }: AboutProps) => {
                 className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4"
                 initial={{ opacity: 0, x: 100 }}
                 animate={isAboutInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.8 }}
             >
             <div className="space-y-4">
                 <h2 className="text-2xl font-semibold">{content.title}</h2>

@@ -7,7 +7,7 @@ import ImageModal from './ImageModal';
 interface Product {
   id: number;
   title: string;
-  price: number;
+  price: string;
   mediaType: "video" | "image";
   mediaUrl: string;
 }
@@ -55,7 +55,7 @@ export default function ProductGrid({ products, onAddToEnquiry, selectedProductI
           </div>
           <div className="p-4">
             <h3 className="text-lg font-semibold mb-2">{product.title}</h3>
-            <p className="text-gray-600 mb-4">Estimated Rental: R{product.price}</p>
+            <p className="text-gray-600 mb-4">Estimated Rental: {product.price}</p>
             <button
               onClick={() => onAddToEnquiry(product)}
               disabled={selectedProductIds.includes(product.id)}

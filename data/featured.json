@@ -5,6 +5,7 @@
       "src": "/gallery/featured/1_customised_animal_portraits.jpg",
       "alt": "Customised Dog Portraits",
       "title": "Customised Dog Portraits",
+      "category": "Illustration",
       "date": "2024-05-04",
       "description": "Unique dog portraits created with custom details for a personalized touch."
     },
@@ -13,6 +14,7 @@
       "src": "/gallery/featured/1_moving_fabric_flowers.jpg",
       "alt": "Moving Fabric Flowers",
       "title": "Moving Fabric Flowers",
+      "category": "Flower rentals",
       "date": "2024-03-19",
       "description": "Dynamic fabric flower decorations that add movement and elegance to decor."
     },
@@ -21,6 +23,7 @@
       "src": "/gallery/featured/7-3D_MODEL-TABLE DECOR.jpg",
       "alt": "Macaw",
       "title": "Paper Sculpture - Macaw",
+      "category": "Paper Sculpture",
       "date": "2024-07-23",
       "description": "A bird sculpture made from paper, capturing the vibrant colors of a macaw."
     }

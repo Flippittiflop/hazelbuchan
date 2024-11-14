@@ -4,26 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Added flower rentals">
-      <change afterPath="$PROJECT_DIR$/data/flower_vids.json" afterDir="false" />
+    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Commit before adjusting for video section">
+      <change afterPath="$PROJECT_DIR$/components/Hero.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/gallery/featured/1_customised_animal_portraits.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/gallery/featured/1_moving_fabric_flowers.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/gallery/featured/7-3D_MODEL-TABLE DECOR.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/gallery/hero/3-ALICE_IN_WONDERLAND_EXHIBITION_PIECE.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/videos/flower-rentals-hero.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/flower-rentals/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/flower-rentals/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/About.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/About.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ArtworkModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ArtworkModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ClientLogos.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ClientLogos.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/EnquiryModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/EnquiryModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Gallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ImageModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ProductEnquiryForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductEnquiryForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ProductGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductGrid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/events-decor.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/events-decor.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/VideoHero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/VideoHero.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/featured.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/featured.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/flower-rentals.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/flower-rentals.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hero.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hero.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/illustration.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/illustration.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/paper-sculpture.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/paper-sculpture.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/gallery/featured/illustration_trees.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/gallery/featured/paper_motorbike.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/gallery/featured/paper_nestle_cooking.jpg" beforeDir="false" />
@@ -77,11 +76,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/public/videos" />
       <recent name="$PROJECT_DIR$/public/gallery" />
       <recent name="$PROJECT_DIR$/public/gallery/hero" />
-      <recent name="$PROJECT_DIR$/public/gallery/featured" />
-      <recent name="$PROJECT_DIR$/public/assets/nav" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html (2)">
@@ -313,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731092583571</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Commit before adjusting for video section">
+      <option name="closed" value="true" />
+      <created>1731615303725</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1731615303725</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +346,8 @@
     <MESSAGE value="Configured contact me form" />
     <MESSAGE value="Fixed issue with logo root path not being set correctly" />
     <MESSAGE value="Added flower rentals" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added flower rentals" />
+    <MESSAGE value="Commit before adjusting for video section" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit before adjusting for video section" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
