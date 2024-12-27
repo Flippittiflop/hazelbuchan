@@ -54,9 +54,9 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navItems = [
-    { href: "/flower-rentals", label: "Flower Rentals", icon: Flower, hoverColor: "group-hover:text-pink-500" },    
-    { href: "/paper-sculpture", label: "Paper Sculpture", icon: Origami, hoverColor: "group-hover:text-green-500" },
-    { href: "/events-decor", label: "Event Decor", icon: CalendarHeart, hoverColor: "group-hover:text-yellow-500" },
+    { href: "/flower-rentals", label: "Flowers", icon: Flower, hoverColor: "group-hover:text-pink-500" },
+    { href: "/paper-sculpture", label: "Paper", icon: Origami, hoverColor: "group-hover:text-green-500" },
+    { href: "/events-decor", label: "Events", icon: CalendarHeart, hoverColor: "group-hover:text-yellow-500" },
     { href: "/illustration", label: "Illustration", icon: Brush, hoverColor: "group-hover:text-purple-500" },
     { href: "/contact", label: "Contact", icon: Mail, hoverColor: "group-hover:text-red-500" },
   ];

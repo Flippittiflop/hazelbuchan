@@ -17,7 +17,7 @@ export default function Home() {
             />
             <About content={aboutData.content} />
             <FeaturedWorks items={featuredWorksData.items} />
-            <ClientLogos items={clientLogosData.items} />
+            {/*<ClientLogos items={clientLogosData.items} />*/}
         </div>
     );
 }
