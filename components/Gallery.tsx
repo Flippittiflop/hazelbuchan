@@ -22,6 +22,13 @@ const Gallery: React.FC<GalleryProps> = ({ items }) => {
   const [selectedArtwork, setSelectedArtwork] = useState<GalleryItem | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
 
+  const filteredItems = useMemo(() => {
+    return items.filter(item =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [items, searchTerm]);
+
   const handleArtworkClick = (item: GalleryItem) => {
     setSelectedArtwork(item);
     gaEvent({
@@ -31,12 +38,24 @@ const Gallery: React.FC<GalleryProps> = ({ items }) => {
     });
   };
 
-  const filteredItems = useMemo(() => {
-    return items.filter(item =>
-        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  }, [items, searchTerm]);
+  const getCurrentIndex = () => {
+    if (!selectedArtwork) return -1;
+    return filteredItems.findIndex(item => item.id === selectedArtwork.id);
+  };
+
+  const handleNext = () => {
+    const currentIndex = getCurrentIndex();
+    if (currentIndex < filteredItems.length - 1) {
+      setSelectedArtwork(filteredItems[currentIndex + 1]);
+    }
+  };
+
+  const handlePrevious = () => {
+    const currentIndex = getCurrentIndex();
+    if (currentIndex > 0) {
+      setSelectedArtwork(filteredItems[currentIndex - 1]);
+    }
+  };
 
   return (
       <div role="region" aria-label="Gallery">
@@ -80,7 +99,8 @@ const Gallery: React.FC<GalleryProps> = ({ items }) => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     style={{
                       objectFit: "cover"
-                    }} />
+                    }}
+                />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <h3 className="text-white text-center text-lg font-semibold px-4">{item.title}</h3>
                 </div>
@@ -96,6 +116,10 @@ const Gallery: React.FC<GalleryProps> = ({ items }) => {
             <ArtworkModal
                 artwork={selectedArtwork}
                 onClose={() => setSelectedArtwork(null)}
+                onNext={handleNext}
+                onPrevious={handlePrevious}
+                hasNext={getCurrentIndex() < filteredItems.length - 1}
+                hasPrevious={getCurrentIndex() > 0}
             />
         )}
       </div>

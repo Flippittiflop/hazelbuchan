@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Commit before adjusting for video section">
-      <change afterPath="$PROJECT_DIR$/components/Hero.tsx" afterDir="false" />
+    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Removed client logos from home and changed navbar titles">
+      <change afterPath="$PROJECT_DIR$/public/assets/nav/HB_Logo_Alt.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/gallery/featured/1_customised_animal_portraits.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/gallery/featured/1_moving_fabric_flowers.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/gallery/featured/7-3D_MODEL-TABLE DECOR.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/gallery/hero/3-ALICE_IN_WONDERLAND_EXHIBITION_PIECE.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/videos/flower-rentals-hero.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/flower-rentals/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/flower-rentals/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/About.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/About.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/EnquiryModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/EnquiryModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ArtworkModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ArtworkModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FeaturedWorks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedWorks.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Gallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ProductEnquiryForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductEnquiryForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ProductGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductGrid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/VideoHero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/VideoHero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/featured.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/featured.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/paper-sculpture.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/paper-sculpture.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/gallery/featured/illustration_trees.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/gallery/featured/paper_motorbike.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/gallery/featured/paper_nestle_cooking.jpg" beforeDir="false" />
@@ -39,7 +32,7 @@
     <option name="defaultAccountId" value="0b2b2507-1420-417c-832f-521c0ce039ab" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -76,11 +69,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/nav" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/videos" />
       <recent name="$PROJECT_DIR$/public/gallery" />
-      <recent name="$PROJECT_DIR$/public/gallery/hero" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html (2)">
@@ -127,6 +120,8 @@
       <workItem from="1731003456578" duration="36000" />
       <workItem from="1731003503298" duration="2319000" />
       <workItem from="1731088414702" duration="4271000" />
+      <workItem from="1731787687801" duration="30000" />
+      <workItem from="1735287695828" duration="5788000" />
     </task>
     <task id="LOCAL-00001" summary="Stable website">
       <option name="closed" value="true" />
@@ -320,11 +315,56 @@
       <option name="project" value="LOCAL" />
       <updated>1731615303725</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="All changes except media">
+      <option name="closed" value="true" />
+      <created>1731618446159</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1731618446159</updated>
+    </task>
+    <task id="LOCAL-00026" summary="fixed buildspec to remove gallery sync">
+      <option name="closed" value="true" />
+      <created>1731618692728</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1731618692728</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Removed client logos from home and changed navbar titles">
+      <option name="closed" value="true" />
+      <created>1735291025986</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1735291025986</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="a425c3ba-bc3f-43b8-b25f-7ee7ad9722bb" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="a425c3ba-bc3f-43b8-b25f-7ee7ad9722bb">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -347,7 +387,10 @@
     <MESSAGE value="Fixed issue with logo root path not being set correctly" />
     <MESSAGE value="Added flower rentals" />
     <MESSAGE value="Commit before adjusting for video section" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit before adjusting for video section" />
+    <MESSAGE value="All changes except media" />
+    <MESSAGE value="fixed buildspec to remove gallery sync" />
+    <MESSAGE value="Removed client logos from home and changed navbar titles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed client logos from home and changed navbar titles" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
