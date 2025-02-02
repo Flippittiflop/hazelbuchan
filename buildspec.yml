@@ -47,11 +47,15 @@ phases:
       # Invalidate CloudFront cache
       # Invalidate CloudFront cache only if ENV is not DEV
       - |
-        if [ "$ENV" != "DEV" ]; then
-          aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
+        if [ "${ENV}" != "DEV" ]; then
+          echo "Performing CloudFront invalidation..."
+          aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*" || {
+            echo "CloudFront invalidation failed";
+            exit 1;
+          }
         else
           echo "Skipping CloudFront invalidation in DEV environment"
-        fi
+        fi 
 
 artifacts:
   base-directory: out
