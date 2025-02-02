@@ -19,6 +19,7 @@ phases:
   pre_build:
     commands:
       # Create environment file
+      - echo "Starting pre_build phase..."
       - echo "Creating .env.production file..."
       - |
         cat << EOF > .env.production
