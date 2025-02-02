@@ -165,7 +165,7 @@ if (require.main === module) {
 
     syncGalleryImages({
         bucketName,
-        prefix: `${galleryType}/`,
+        prefix: `media-files/${galleryType}/`,
         outputPath: `public/gallery/${galleryType}`,
         galleryType,
         type,

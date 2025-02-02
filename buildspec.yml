@@ -25,9 +25,9 @@ phases:
         NEXT_PUBLIC_GA_MEASUREMENT_ID=${NEXT_PUBLIC_GA_MEASUREMENT_ID}
         EOF
         export GALLERY_BUCKET_NAME=${GALLERY_BUCKET_NAME}
+      - npm run sync-gallery -- featured gallery
 #      # Sync gallery images
 #      - npm run sync-gallery -- hero gallery
-#      - npm run sync-gallery -- featured gallery
 #      - npm run sync-gallery -- events-decor gallery
 #      - npm run sync-gallery -- illustration gallery
 #      - npm run sync-gallery -- paper-sculpture gallery
@@ -44,7 +44,13 @@ phases:
       # Upload to S3
       - aws s3 sync out/ s3://${AWS_S3_BUCKET}/ --delete
       # Invalidate CloudFront cache
-      - aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
+      # Invalidate CloudFront cache only if ENV is not DEV
+      - |
+        if [ "$ENV" != "DEV" ]; then
+          aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
+        else
+          echo "Skipping CloudFront invalidation in DEV environment"
+        fi
 
 artifacts:
   base-directory: out
