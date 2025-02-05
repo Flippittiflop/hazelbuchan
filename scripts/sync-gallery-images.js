@@ -124,9 +124,18 @@ async function syncGalleryImages(config) {
                     price: metadata.price,
                     mediaType: metadata.mediaType,
                     mediaUrl: `/gallery/${config.galleryType}/${filename}`,
-                    sequence: metadata.sequence,
+                    sequence: metadata.sequence
                 });
-            } else {
+            }
+            else if (config.type === 'basic') {
+                items.push({
+                    id: id++,
+                    title: metadata.title,
+                    src: `/gallery/${config.galleryType}/${filename}`,
+                    sequence: metadata.sequence
+                });
+            }
+            else {
                 items.push({
                     id: id++,
                     src: `/gallery/${config.galleryType}/${filename}`,
@@ -135,7 +144,7 @@ async function syncGalleryImages(config) {
                     category: metadata.category,
                     date: metadata.date,
                     description: metadata.description,
-                    sequence: metadata.sequence,
+                    sequence: metadata.sequence
                 });
             }
         }

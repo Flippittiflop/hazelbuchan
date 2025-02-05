@@ -7,6 +7,7 @@ import EnquiryModal from '@/components/EnquiryModal';
 import EnquiryButton from '@/components/EnquiryButton';
 import VideoHero from '@/components/VideoHero';
 import productsData from '@/data/flower-rentals.json';
+import videoSources from '@/data/flower-videos.json';
 
 type Product = {
     id: number;
@@ -18,12 +19,12 @@ type Product = {
 
 const products = productsData.items as Product[];
 
-const videoSources = [
-    {
-        src: "/videos/flower-rentals-hero.mp4",
-        type: "video/mp4"
-    }
-];
+// const videoSources = [
+//     {
+//         src: "/videos/flower-rentals-hero.mp4",
+//         type: "video/mp4"
+//     }
+// ];
 // {
 //     src: "/videos/flower-rentals-hero.webm",
 //         type: "video/webm"
@@ -63,7 +64,7 @@ export default function FlowerRentals() {
 
     return (
         <div className="space-y-8">
-            <VideoHero videoSources={videoSources} />
+            <VideoHero videoSources={videoSources.items} />
 
             <EnquiryButton
                 count={selectedProducts.length}

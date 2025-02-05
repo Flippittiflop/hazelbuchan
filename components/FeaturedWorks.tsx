@@ -21,9 +21,9 @@ interface FeaturedWorksProps {
 
 const categoryToPath = {
     'Illustration': '/illustration',
-    'Flower rentals': '/flower-rentals',
-    'Paper Sculpture': '/paper-sculpture',
-    'Events': '/events-decor'
+    'FlowerRentals': '/flower-rentals',
+    'PaperSculpture': '/paper-sculpture',
+    'EventsDecor': '/events-decor'
 };
 
 const FeaturedWorks = ({ items }: FeaturedWorksProps) => {
