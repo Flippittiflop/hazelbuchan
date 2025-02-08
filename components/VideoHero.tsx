@@ -3,7 +3,6 @@
 interface VideoHeroProps {
   videoSources?: {
     src: string;
-    type: string;
   }[];
 }
 
@@ -22,7 +21,7 @@ export default function VideoHero({ videoSources = [] }: VideoHeroProps) {
             className="absolute top-0 left-0 w-full h-full object-cover"
         >
           {videoSources.map((source, index) => (
-              <source key={index} src={source.src} type={source.type} />
+              <source key={index} src={source.src} />
           ))}
           Your browser does not support the video tag.
         </video>
