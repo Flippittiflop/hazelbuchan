@@ -150,7 +150,7 @@ async function syncGalleryImages(config) {
                     alt: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),
                     description: getMetadataValue(metadata, galleryTemplate.description.key, galleryTemplate.description.default),
                 });
-            } else if (config.type === 'feature') {
+            } else if (config.type === 'featured') {
                 items.push({
                     id: id++,
                     title: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),

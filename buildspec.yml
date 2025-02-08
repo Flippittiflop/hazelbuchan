@@ -26,7 +26,7 @@ phases:
         NEXT_PUBLIC_GA_MEASUREMENT_ID=${NEXT_PUBLIC_GA_MEASUREMENT_ID}
         EOF
         export GALLERY_BUCKET_NAME=${GALLERY_BUCKET_NAME}
-      - npm run sync-gallery -- featured gallery
+      - npm run sync-gallery -- featured featured
 #      # Sync gallery images
       - npm run sync-gallery -- events-decor gallery
       - npm run sync-gallery -- illustration gallery
