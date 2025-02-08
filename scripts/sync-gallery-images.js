@@ -12,7 +12,7 @@ const productTemplate = {
     description: { key: 'description', default: "No Description" },
     sequence: { key: 'sequence', default: 99 },
     type: { key: 'type', default: "Static" },
-    isActive: { key: 'isActive', default: true }
+    isActive: { key: 'is-active', default: true }
 };
 
 const galleryTemplate = {
@@ -20,7 +20,7 @@ const galleryTemplate = {
     date: { key: 'date', default: "2021-01-01" },
     sequence: { key: 'sequence', default: 99 },
     description: { key: 'description', default: "No Description" },
-    isActive: { key: 'isActive', default: true }
+    isActive: { key: 'is-active', default: true }
 };
 
 const featureTemplate = {
@@ -29,12 +29,13 @@ const featureTemplate = {
     description: { key: 'description', default: "No Description" },
     sequence: { key: 'sequence', default: 99 },
     category: { key: 'category', default: "PaperSculpture" },
-    isActive: { key: 'isActive', default: true }
+    isActive: { key: 'is-active', default: true }
 }
 
 const basicTemplate = {
     title: { key: 'title', default: 'No Title' },
-    sequence: { key: 'sequence', default: 99 }
+    sequence: { key: 'sequence', default: 99 },
+    isActive: { key: 'is-active', default: true }
 }
 
 async function downloadImage(client, bucket, key, outputPath) {
