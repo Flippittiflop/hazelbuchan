@@ -137,6 +137,8 @@ async function syncGalleryImages(config) {
                     price: getMetadataValue(metadata, productTemplate.price.key, productTemplate.price.default),
                     mediaType: getMetadataValue(metadata, productTemplate.mediaType.key, productTemplate.mediaType.default),
                     mediaUrl: `/gallery/${config.galleryType}/${filename}`,
+                    src: `/gallery/${config.galleryType}/${filename}`,
+                    alt: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),
                     sequence: getMetadataValue(metadata, productTemplate.sequence.key, productTemplate.sequence.default, parseInt),
                 });
             } else if (config.type === 'gallery') {
@@ -144,6 +146,8 @@ async function syncGalleryImages(config) {
                     id: id++,
                     title: getMetadataValue(metadata, galleryTemplate.title.key, galleryTemplate.title.default),
                     date: getMetadataValue(metadata, galleryTemplate.date.key, galleryTemplate.date.default),
+                    src: `/gallery/${config.galleryType}/${filename}`,
+                    alt: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),
                     description: getMetadataValue(metadata, galleryTemplate.description.key, galleryTemplate.description.default),
                 });
             } else if (config.type === 'feature') {
@@ -151,6 +155,8 @@ async function syncGalleryImages(config) {
                     id: id++,
                     title: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),
                     date: getMetadataValue(metadata, featureTemplate.date.key, featureTemplate.date.default),
+                    src: `/gallery/${config.galleryType}/${filename}`,
+                    alt: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),
                     description: getMetadataValue(metadata, featureTemplate.description.key, featureTemplate.description.default),
                     category: getMetadataValue(metadata, featureTemplate.category.key, featureTemplate.category.default),
                 });
@@ -158,6 +164,8 @@ async function syncGalleryImages(config) {
                 items.push({
                     id: id++,
                     title: getMetadataValue(metadata, basicTemplate.title.key, basicTemplate.title.default),
+                    src: `/gallery/${config.galleryType}/${filename}`,
+                    alt: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),
                 });
             }
         }
