@@ -8,10 +8,7 @@ const { finished } = require('stream/promises');
 const productTemplate = {
     title: { key: 'title', default: 'No Title' },
     price: { key: 'price', default: "Enquire" },
-    mediaType: {
-        key: 'mediaType',
-        default: 'image',
-    },
+    mediaType: { key: 'mediaType', default: 'image'},
     description: { key: 'description', default: "No Description" },
     type: { key: 'type', default: "Static" },
     sequence: { key: 'sequence', default: 99, transform: parseInt },
@@ -62,8 +59,8 @@ async function getObjectMetadata(client, bucket, key) {
         if (response.Metadata) {
             for (const [key, value] of Object.entries(response.Metadata)) {
                 metadata.push({ key, value });
-                console.log("Meta Data Key ",key);
-                console.log("Meta Data Value ",value);
+                // console.log("Meta Data Key ",key);
+                // console.log("Meta Data Value ",value);
             }
         }
 
@@ -137,8 +134,8 @@ async function syncGalleryImages(config) {
                 items.push({
                     id: id++,
                     title: getMetadataValue(metadata, productTemplate.title.key, productTemplate.title.default),
-                    price: getMetadataValue(metadata, productTemplate.price.key, productTemplate.price.default, parseFloat),
-                    mediaType: productTemplate.mediaType.compute(object.Key),
+                    price: getMetadataValue(metadata, productTemplate.price.key, productTemplate.price.default),
+                    mediaType: getMetadataValue(metadata, productTemplate.mediaType.key, productTemplate.mediaType.default),
                     mediaUrl: `/gallery/${config.galleryType}/${filename}`,
                     sequence: getMetadataValue(metadata, productTemplate.sequence.key, productTemplate.sequence.default, parseInt),
                 });
