@@ -10,25 +10,31 @@ const productTemplate = {
     price: { key: 'price', default: "Enquire" },
     mediaType: { key: 'mediaType', default: 'image'},
     description: { key: 'description', default: "No Description" },
+    sequence: { key: 'sequence', default: 99 },
     type: { key: 'type', default: "Static" },
-    sequence: { key: 'sequence', default: 99, transform: parseInt },
+    isActive: { key: 'isActive', default: true }
 };
 
 const galleryTemplate = {
     title: { key: 'title', default: 'No Title' },
     date: { key: 'date', default: "2021-01-01" },
+    sequence: { key: 'sequence', default: 99 },
     description: { key: 'description', default: "No Description" },
+    isActive: { key: 'isActive', default: true }
 };
 
 const featureTemplate = {
     title: { key: 'title', default: 'No Title' },
     date: { key: 'date', default: "2021-01-01" },
     description: { key: 'description', default: "No Description" },
+    sequence: { key: 'sequence', default: 99 },
     category: { key: 'category', default: "PaperSculpture" },
+    isActive: { key: 'isActive', default: true }
 }
 
 const basicTemplate = {
     title: { key: 'title', default: 'No Title' },
+    sequence: { key: 'sequence', default: 99 }
 }
 
 async function downloadImage(client, bucket, key, outputPath) {
@@ -109,13 +115,13 @@ async function syncGalleryImages(config) {
             return;
         }
 
-        // Sort objects by sequence number and LastModified
-        const sortedObjects = response.Contents.sort((a, b) => {
-            const seqA = parseInt(a.Metadata?.sequence) || 99;
-            const seqB = parseInt(b.Metadata?.sequence) || 99;
-            if (seqA !== seqB) return seqA - seqB;
-            return new Date(b.LastModified) - new Date(a.LastModified);
-        });
+        // // Sort objects by sequence number and LastModified
+        // const sortedObjects = response.Contents.sort((a, b) => {
+        //     const seqA = parseInt(a.Metadata?.sequence) || 99;
+        //     const seqB = parseInt(b.Metadata?.sequence) || 99;
+        //     if (seqA !== seqB) return seqA - seqB;
+        //     return new Date(b.LastModified) - new Date(a.LastModified);
+        // });
 
         for (const object of sortedObjects) {
             if (!object.Key) continue;
@@ -130,7 +136,7 @@ async function syncGalleryImages(config) {
 
             const metadata = await getObjectMetadata(client, config.bucketName, object.Key);
 
-            if (config.type === 'product') {
+            if (config.type === 'product' && getMetadataValue(metadata, productTemplate.isActive.key, productTemplate.isActive.default) == true) {
                 items.push({
                     id: id++,
                     title: getMetadataValue(metadata, productTemplate.title.key, productTemplate.title.default),
@@ -138,19 +144,20 @@ async function syncGalleryImages(config) {
                     mediaType: getMetadataValue(metadata, productTemplate.mediaType.key, productTemplate.mediaType.default),
                     mediaUrl: `/gallery/${config.galleryType}/${filename}`,
                     src: `/gallery/${config.galleryType}/${filename}`,
-                    alt: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),
+                    alt: getMetadataValue(metadata, productTemplate.title.key, productTemplate.title.default),
                     sequence: getMetadataValue(metadata, productTemplate.sequence.key, productTemplate.sequence.default, parseInt),
                 });
-            } else if (config.type === 'gallery') {
+            } else if (config.type === 'gallery' && getMetadataValue(metadata, galleryTemplate.isActive.key, galleryTemplate.isActive.default) == true) {
                 items.push({
                     id: id++,
                     title: getMetadataValue(metadata, galleryTemplate.title.key, galleryTemplate.title.default),
                     date: getMetadataValue(metadata, galleryTemplate.date.key, galleryTemplate.date.default),
                     src: `/gallery/${config.galleryType}/${filename}`,
-                    alt: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),
+                    alt: getMetadataValue(metadata, galleryTemplate.title.key, galleryTemplate.title.default),
                     description: getMetadataValue(metadata, galleryTemplate.description.key, galleryTemplate.description.default),
+                    sequence: getMetadataValue(metadata, galleryTemplate.sequence.key, galleryTemplate.sequence.default, parseInt)
                 });
-            } else if (config.type === 'featured') {
+            } else if (config.type === 'featured' && getMetadataValue(metadata, featureTemplate.isActive.key, featureTemplate.isActive.default) == true) {
                 items.push({
                     id: id++,
                     title: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),
@@ -159,18 +166,20 @@ async function syncGalleryImages(config) {
                     alt: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),
                     description: getMetadataValue(metadata, featureTemplate.description.key, featureTemplate.description.default),
                     category: getMetadataValue(metadata, featureTemplate.category.key, featureTemplate.category.default),
+                    sequence: getMetadataValue(metadata, featureTemplate.sequence.key, featureTemplate.sequence.default, parseInt)
                 });
-            } else if (config.type === 'basic') {
+            } else if (config.type === 'basic'  && getMetadataValue(metadata, basicTemplate.isActive.key, basicTemplate.isActive.default) == true) {
                 items.push({
                     id: id++,
                     title: getMetadataValue(metadata, basicTemplate.title.key, basicTemplate.title.default),
                     src: `/gallery/${config.galleryType}/${filename}`,
-                    alt: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),
+                    alt: getMetadataValue(metadata, basicTemplate.title.key, basicTemplate.title.default),
+                    sequence: getMetadataValue(metadata, basicTemplate.sequence.key, basicTemplate.sequence.default, parseInt),
                 });
             }
         }
         // Sort items by sequence
-        // items.sort((a, b) => a.sequence - b.sequence);
+        items.sort((a, b) => a.sequence - b.sequence);
         console.log("JSON Items ",items);
         const outputDataPath = join(dataPath, `${config.galleryType}.json`);
         writeFileSync(outputDataPath, JSON.stringify({ items }, null, 2));
