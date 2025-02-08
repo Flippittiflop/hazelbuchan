@@ -48,7 +48,7 @@ phases:
       # Invalidate CloudFront cache
       # Invalidate CloudFront cache only if ENV is not DEV
       - |
-        if [ "${ENV}" != "DEV" ]; then
+        if [ "$(echo "${ENV}" | tr '[:lower:]' '[:upper:]')" == "PRD" ]; then
           echo "Performing CloudFront invalidation..."
           aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*" || {
             echo "CloudFront invalidation failed";
