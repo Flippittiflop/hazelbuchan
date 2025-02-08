@@ -33,7 +33,7 @@ phases:
       - npm run sync-gallery -- paper-sculpture gallery
       - npm run sync-gallery -- hero basic
 #      # Sync product images
-      - npm run sync-gallery -- flower-rentals products
+      - npm run sync-gallery -- flower-rentals product
       - npm run sync-gallery -- flower-videos basic
 
   build:

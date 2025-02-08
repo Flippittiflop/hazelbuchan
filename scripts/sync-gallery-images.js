@@ -4,6 +4,36 @@ const { join } = require('path');
 const { Readable } = require('stream');
 const { finished } = require('stream/promises');
 
+// Template for product metadata
+const productTemplate = {
+    title: { key: 'title', default: 'No Title' },
+    price: { key: 'price', default: "Enquire" },
+    mediaType: {
+        key: 'mediaType',
+        default: 'image',
+    },
+    description: { key: 'description', default: "No Description" },
+    type: { key: 'type', default: "Static" },
+    sequence: { key: 'sequence', default: 99, transform: parseInt },
+};
+
+const galleryTemplate = {
+    title: { key: 'title', default: 'No Title' },
+    date: { key: 'date', default: "2021-01-01" },
+    description: { key: 'description', default: "No Description" },
+};
+
+const featureTemplate = {
+    title: { key: 'title', default: 'No Title' },
+    date: { key: 'date', default: "2021-01-01" },
+    description: { key: 'description', default: "No Description" },
+    category: { key: 'category', default: "PaperSculpture" },
+}
+
+const basicTemplate = {
+    title: { key: 'title', default: 'No Title' },
+}
+
 async function downloadImage(client, bucket, key, outputPath) {
     const command = new GetObjectCommand({
         Bucket: bucket,
@@ -18,7 +48,7 @@ async function downloadImage(client, bucket, key, outputPath) {
     await finished(body.pipe(writer));
 }
 
-async function getObjectMetadata(client, bucket, key, type = 'gallery') {
+async function getObjectMetadata(client, bucket, key) {
     const command = new HeadObjectCommand({
         Bucket: bucket,
         Key: key,
@@ -27,45 +57,31 @@ async function getObjectMetadata(client, bucket, key, type = 'gallery') {
     try {
         const response = await client.send(command);
 
-        if (type === 'products') {
-            const mediaType = /\.(mp4|webm|ogg)$/i.test(key) ? 'video' : 'image';
-            return {
-                title: response.Metadata?.['title'] || 'No Title',
-                price: parseInt(response.Metadata?.['price']) || 0,
-                mediaType,
-                sequence: parseInt(response.Metadata?.['sequence']) || 99,
-            };
+        // Convert the metadata to key-value pairs
+        const metadata = [];
+        if (response.Metadata) {
+            for (const [key, value] of Object.entries(response.Metadata)) {
+                metadata.push({ key, value });
+                console.log("Meta Data Key ",key);
+                console.log("Meta Data Value ",value);
+            }
         }
 
-        // Default gallery metadata
-        return {
-            title: response.Metadata?.['title'] || 'No Title',
-            description: response.Metadata?.['description'] || 'No Description',
-            category: response.Metadata?.['category'] || 'No Category',
-            date: response.LastModified?.toISOString().split('T')[0] || new Date().toISOString().split('T')[0],
-            sequence: parseInt(response.Metadata?.['sequence']) || 99,
-        };
+        return metadata;
+
     } catch (error) {
         console.error(`Error fetching metadata for ${key}:`, error);
-
-        if (type === 'products') {
-            return {
-                title: 'No Title',
-                price: 0,
-                mediaType: 'image',
-                sequence: 99,
-            };
-        }
-
-        return {
-            title: 'No Title',
-            description: 'No Description',
-            date: new Date().toISOString().split('T')[0],
-            category: 'No Category',
-            sequence: 99,
-        };
+        // Return an empty array on error
+        return [];
     }
 }
+
+// Function to get metadata values from key-value array
+function getMetadataValue(keyValueArray, key, defaultValue, transform = (x) => x) {
+    const entry = keyValueArray.find(item => item.key === key);
+    return entry ? transform(entry.value) : defaultValue;
+}
+
 
 async function syncGalleryImages(config) {
     const client = new S3Client({});
@@ -115,43 +131,42 @@ async function syncGalleryImages(config) {
             const outputImagePath = join(publicGalleryPath, filename);
             await downloadImage(client, config.bucketName, object.Key, outputImagePath);
 
-            const metadata = await getObjectMetadata(client, config.bucketName, object.Key, config.type);
+            const metadata = await getObjectMetadata(client, config.bucketName, object.Key);
 
-            if (config.type === 'products') {
+            if (config.type === 'product') {
                 items.push({
                     id: id++,
-                    title: metadata.title,
-                    price: metadata.price,
-                    mediaType: metadata.mediaType,
+                    title: getMetadataValue(metadata, productTemplate.title.key, productTemplate.title.default),
+                    price: getMetadataValue(metadata, productTemplate.price.key, productTemplate.price.default, parseFloat),
+                    mediaType: productTemplate.mediaType.compute(object.Key),
                     mediaUrl: `/gallery/${config.galleryType}/${filename}`,
-                    sequence: metadata.sequence
+                    sequence: getMetadataValue(metadata, productTemplate.sequence.key, productTemplate.sequence.default, parseInt),
                 });
-            }
-            else if (config.type === 'basic') {
+            } else if (config.type === 'gallery') {
                 items.push({
                     id: id++,
-                    title: metadata.title,
-                    src: `/gallery/${config.galleryType}/${filename}`,
-                    sequence: metadata.sequence
+                    title: getMetadataValue(metadata, galleryTemplate.title.key, galleryTemplate.title.default),
+                    date: getMetadataValue(metadata, galleryTemplate.date.key, galleryTemplate.date.default),
+                    description: getMetadataValue(metadata, galleryTemplate.description.key, galleryTemplate.description.default),
                 });
-            }
-            else {
+            } else if (config.type === 'feature') {
                 items.push({
                     id: id++,
-                    src: `/gallery/${config.galleryType}/${filename}`,
-                    alt: metadata.title,
-                    title: metadata.title,
-                    category: metadata.category,
-                    date: metadata.date,
-                    description: metadata.description,
-                    sequence: metadata.sequence
+                    title: getMetadataValue(metadata, featureTemplate.title.key, featureTemplate.title.default),
+                    date: getMetadataValue(metadata, featureTemplate.date.key, featureTemplate.date.default),
+                    description: getMetadataValue(metadata, featureTemplate.description.key, featureTemplate.description.default),
+                    category: getMetadataValue(metadata, featureTemplate.category.key, featureTemplate.category.default),
+                });
+            } else if (config.type === 'basic') {
+                items.push({
+                    id: id++,
+                    title: getMetadataValue(metadata, basicTemplate.title.key, basicTemplate.title.default),
                 });
             }
         }
-
         // Sort items by sequence
-        items.sort((a, b) => a.sequence - b.sequence);
-
+        // items.sort((a, b) => a.sequence - b.sequence);
+        console.log("JSON Items ",items);
         const outputDataPath = join(dataPath, `${config.galleryType}.json`);
         writeFileSync(outputDataPath, JSON.stringify({ items }, null, 2));
 
