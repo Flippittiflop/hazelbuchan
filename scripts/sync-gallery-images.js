@@ -124,7 +124,7 @@ async function syncGalleryImages(config) {
         //     return new Date(b.LastModified) - new Date(a.LastModified);
         // });
 
-        for (const object of sortedObjects) {
+        for (const object of response.Contents) {
             if (!object.Key) continue;
 
             if (!/\.(jpg|jpeg|png|gif|webp|mp4|webm|ogg)$/i.test(object.Key)) continue;
