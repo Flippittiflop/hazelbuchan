@@ -30,13 +30,13 @@ phases:
         export GALLERY_BUCKET_NAME=${GALLERY_BUCKET_NAME}
       - npm run sync-gallery -- featured featured
 #      # Sync gallery images
-      - npm run sync-gallery -- events-decor gallery
-      - npm run sync-gallery -- illustration gallery
-      - npm run sync-gallery -- paper-sculpture gallery
-      - npm run sync-gallery -- hero basic
+      - npm run sync-gallery -- Events-Decor gallery
+      - npm run sync-gallery -- Illustration gallery
+      - npm run sync-gallery -- Paper-Sculpture gallery
+      - npm run sync-gallery -- Hero basic
 #      # Sync product images
-      - npm run sync-gallery -- flower-rentals product
-      - npm run sync-gallery -- flower-videos basic
+      - npm run sync-gallery -- Flower-Rentals product
+      - npm run sync-gallery -- Flower-Videos basic
 
   build:
     commands:

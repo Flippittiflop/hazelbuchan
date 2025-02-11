@@ -2,7 +2,6 @@ const { S3Client, GetObjectCommand } = require("@aws-sdk/client-s3");
 const { writeFileSync, mkdirSync, existsSync, createWriteStream } = require('fs');
 const { join } = require('path');
 const { finished } = require('stream/promises');
-const fetch = require('node-fetch');
 
 // Use the parameter store names directly
 const APPSYNC_ENDPOINT = process.env.APPSYNC_URL;
@@ -44,6 +43,9 @@ async function fetchCategoryData(categoryName) {
     };
 
     try {
+        // Dynamic import of node-fetch
+        const fetch = (await import('node-fetch')).default;
+
         const response = await fetch(APPSYNC_ENDPOINT, {
             method: 'POST',
             headers: {
