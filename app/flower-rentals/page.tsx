@@ -47,7 +47,7 @@ export default function FlowerRentals() {
         }
     };
 
-    const handleRemoveProduct = (productId: number) => {
+    const handleRemoveProduct = (productId: string) => {
         setSelectedProducts(selectedProducts.filter(p => p.id !== productId));
     };
 
