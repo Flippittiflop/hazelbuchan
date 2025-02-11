@@ -69,7 +69,7 @@ export default function EnquiryModal({
     setIsSubmitting(true);
     try {
       // Add selected products to form data
-      const productsInfo = selectedProducts.map(p => `${p.title} (R${p.price})`).join(', ');
+      const productsInfo = selectedProducts.map(p => `${p.title} (${p.price})`).join(', ');
       data.products = productsInfo;
 
       const response = await fetch('https://formspree.io/f/xanyoypr', {
