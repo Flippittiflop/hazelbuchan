@@ -15,7 +15,6 @@ export default function VideoHero({ videoSources = [] }: VideoHeroProps) {
       <div className="relative w-full h-[70vh] overflow-hidden">
         <video
             autoPlay
-            loop
             muted
             playsInline
             className="absolute top-0 left-0 w-full h-full object-cover"
