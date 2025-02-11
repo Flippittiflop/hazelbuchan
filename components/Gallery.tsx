@@ -6,7 +6,7 @@ import ArtworkModal from './ArtworkModal';
 import { event as gaEvent } from '@/lib/analytics';
 
 interface GalleryItem {
-  id: number;
+  id: string;
   src: string;
   alt: string;
   title: string;

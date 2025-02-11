@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 interface ClientLogo {
-  id: number;
+  id: string;
   name: string;
   logo: string;
   url: string;

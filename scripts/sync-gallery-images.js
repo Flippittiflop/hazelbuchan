@@ -97,7 +97,7 @@ function createItemFromMetadata(type, metadata, filename, id, config) {
                 title: getMetadataValue(metadata, template.title.key, template.title.default),
                 price: getMetadataValue(metadata, template.price.key, template.price.default),
                 mediaType: getMetadataValue(metadata, template.mediaType.key, template.mediaType.default),
-                mediaUrl: baseItem.src
+                src: baseItem.src
             };
         case 'gallery':
             return {

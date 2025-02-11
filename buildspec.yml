@@ -28,15 +28,15 @@ phases:
         NEXT_PUBLIC_GA_MEASUREMENT_ID=${NEXT_PUBLIC_GA_MEASUREMENT_ID}
         EOF
         export GALLERY_BUCKET_NAME=${GALLERY_BUCKET_NAME}
-      - npm run sync-gallery -- featured featured
+      - npm run sync-gallery -- Featured
 #      # Sync gallery images
-      - npm run sync-gallery -- Events-Decor gallery
-      - npm run sync-gallery -- Illustration gallery
-      - npm run sync-gallery -- Paper-Sculpture gallery
-      - npm run sync-gallery -- Hero basic
+      - npm run sync-gallery -- Events-Decor
+      - npm run sync-gallery -- Illustration
+      - npm run sync-gallery -- Paper-Sculpture
+      - npm run sync-gallery -- Hero
 #      # Sync product images
-      - npm run sync-gallery -- Flower-Rentals product
-      - npm run sync-gallery -- Flower-Videos basic
+      - npm run sync-gallery -- Flower-Rentals
+      - npm run sync-gallery -- Flower-Videos
 
   build:
     commands:
