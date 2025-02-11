@@ -1,32 +1,34 @@
 {
   "items": [
     {
-      "id": 20,
-      "src": "/gallery/featured/1_customised_animal_portraits.jpg",
-      "alt": "Customised Dog Portraits",
-      "title": "Customised Dog Portraits",
+      "id": "13",
+      "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "alt": "Mechanical Flower Installation",
+      "title": "Mechanical Flower Installation",
+      "category": "Flower Rentals",
+      "date": "2024-02-15",
+      "description": "Stunning mechanical flower installation for events",
+      "sequence": 0
+    },
+    {
+      "id": "14",
+      "src": "https://images.unsplash.com/photo-1513364776144-60967b0f800f",
+      "alt": "Wildlife Series",
+      "title": "Wildlife Series",
       "category": "Illustration",
-      "date": "2024-05-04",
-      "description": "Unique dog portraits created with custom details for a personalized touch."
+      "date": "2024-02-15",
+      "description": "Collection of detailed wildlife illustrations",
+      "sequence": 1
     },
     {
-      "id": 21,
-      "src": "/gallery/featured/1_moving_fabric_flowers.jpg",
-      "alt": "Moving Fabric Flowers",
-      "title": "Moving Fabric Flowers",
-      "category": "Flower rentals",
-      "date": "2024-03-19",
-      "description": "Dynamic fabric flower decorations that add movement and elegance to decor."
-    },
-    {
-      "id": 22,
-      "src": "/gallery/featured/7-3D_MODEL-TABLE DECOR.jpg",
-      "alt": "Macaw",
-      "title": "Paper Sculpture - Macaw",
+      "id": "15",
+      "src": "https://images.unsplash.com/photo-1517697471339-4aa32003c11a",
+      "alt": "Paper Art Installation",
+      "title": "Paper Art Installation",
       "category": "Paper Sculpture",
-      "date": "2024-07-23",
-      "description": "A bird sculpture made from paper, capturing the vibrant colors of a macaw."
+      "date": "2024-02-15",
+      "description": "Large-scale paper art installation",
+      "sequence": 2
     }
   ]
-
 }

@@ -1,79 +1,31 @@
 {
-  "items":
-  [
+  "items": [
     {
-      "id": 39,
-      "src": "/gallery/paper-sculpture/10-BANK_NOTE_PAPER_SCULPTURE.jpg",
-      "alt": "Bank Note Paper Sculpture",
-      "title": "Bank Note Paper Sculpture",
-      "date": "2024-01-12",
-      "description": "A paper sculpture crafted to resemble an intricate bank note."
+      "id": "10",
+      "src": "https://images.unsplash.com/photo-1517697471339-4aa32003c11a",
+      "alt": "Abstract Paper Art",
+      "title": "Abstract Paper Art",
+      "description": "Complex abstract paper sculpture with intricate folds",
+      "date": "2024-02-15",
+      "sequence": 0
     },
     {
-      "id": 40,
-      "src": "/gallery/paper-sculpture/11_AWARD_WINNER_CAMPAIGN.jpg",
-      "alt": "Award Winner Campaign",
-      "title": "Award Winner Campaign",
-      "date": "2024-07-21",
-      "description": "An award-winning campaign featuring unique paper artwork."
+      "id": "11",
+      "src": "https://images.unsplash.com/photo-1517697471339-4aa32003c11a",
+      "alt": "Paper Bird",
+      "title": "Paper Bird",
+      "description": "Delicate paper bird sculpture with detailed feathers",
+      "date": "2024-02-15",
+      "sequence": 1
     },
     {
-      "id": 41,
-      "src": "/gallery/paper-sculpture/12_ABSA_CAMPAIGN.jpg",
-      "alt": "ABSA Campaign Sculpture",
-      "title": "ABSA Campaign Sculpture",
-      "date": "2024-05-16",
-      "description": "A custom sculpture created for the ABSA campaign, using paper art."
-    },
-    {
-      "id": 42,
-      "src": "/gallery/paper-sculpture/1_SAMURAI_SCULPTURE.jpg",
-      "alt": "Samurai Sculpture",
-      "title": "Samurai Sculpture",
-      "date": "2023-12-05",
-      "description": "A detailed sculpture of a samurai, crafted entirely from paper."
-    },
-    {
-      "id": 43,
-      "src": "/gallery/paper-sculpture/2_PAPERSMITH_PAPER_ART.jpg",
-      "alt": "Papersmith Paper Art",
-      "title": "Papersmith Paper Art",
-      "date": "2024-03-27",
-      "description": "Artistic paper sculptures created by Papersmith for a unique collection."
-    },
-    {
-      "id": 44,
-      "src": "/gallery/paper-sculpture/3-ALICE_IN_WONDERLAND_EXHIBITION_PIECE.jpg",
-      "alt": "Alice in Wonderland Exhibition Piece",
-      "title": "Alice in Wonderland Exhibition Piece",
-      "date": "2024-08-04",
-      "description": "An exhibition piece inspired by Alice in Wonderland, created from paper."
-    },
-    {
-      "id": 45,
-      "src": "/gallery/paper-sculpture/5_ANTALIS_PAPER_CAMPAIGN.jpg",
-      "alt": "Antalis Paper Campaign",
-      "title": "Antalis Paper Campaign",
-      "date": "2024-04-15",
-      "description": "A campaign sculpture designed for Antalis, showcasing innovative paper art."
-    },
-    {
-      "id": 46,
-      "src": "/gallery/paper-sculpture/6_INTERIOR_COMMISSIONS.jpg",
-      "alt": "Interior Commissions",
-      "title": "Interior Commissions",
-      "date": "2024-06-11",
-      "description": "Custom paper installations commissioned for interior decor."
-    },
-    {
-      "id": 47,
-      "src": "/gallery/paper-sculpture/9_POPUP_MAP_SOUTHA_FRICA.jpg",
-      "alt": "Pop-Up Map of South Africa",
-      "title": "Pop-Up Map of South Africa",
-      "date": "2024-02-22",
-      "description": "A pop-up map of South Africa crafted from paper for a unique display."
+      "id": "12",
+      "src": "https://images.unsplash.com/photo-1517697471339-4aa32003c11a",
+      "alt": "Architectural Paper Model",
+      "title": "Architectural Paper Model",
+      "description": "Intricate architectural model crafted from paper",
+      "date": "2024-02-15",
+      "sequence": 2
     }
   ]
-
-
 }

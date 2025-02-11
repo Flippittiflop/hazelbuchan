@@ -5,7 +5,7 @@ import Image from "next/image";
 import ImageModal from './ImageModal';
 
 interface Product {
-  id: number;
+  id: string;
   title: string;
   price: string;
   mediaType: "video" | "image";
@@ -15,7 +15,7 @@ interface Product {
 interface ProductGridProps {
   products: Product[];
   onAddToEnquiry: (product: Product) => void;
-  selectedProductIds: number[];
+  selectedProductIds: string[];
 }
 
 export default function ProductGrid({ products, onAddToEnquiry, selectedProductIds }: ProductGridProps) {

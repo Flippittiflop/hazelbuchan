@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRef } from 'react';
 
 interface FeaturedWork {
-    id: number;
+    id: string;
     src: string;
     alt: string;
     title: string;

@@ -15,7 +15,7 @@ interface EnquiryFormData {
 }
 
 interface Product {
-  id: number;
+  id: string;
   title: string;
   price: string;
   mediaType: "video" | "image";
@@ -26,7 +26,7 @@ interface EnquiryModalProps {
   isOpen: boolean;
   onClose: () => void;
   selectedProducts: Product[];
-  onRemoveProduct: (id: number) => void;
+  onRemoveProduct: (id: string) => void;
   onSubmit: (data: EnquiryFormData) => void;
 }
 

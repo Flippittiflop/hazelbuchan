@@ -1,33 +1,37 @@
 {
   "items": [
     {
-      "id": 1,
+      "id": "1",
+      "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "alt": "Pink Mechanical Flower",
+      "title": "Pink Mechanical Flower",
+      "description": "Large mechanical flower with automated opening and closing mechanism",
+      "date": "2024-02-15",
+      "sequence": 0,
+      "price": "R2500 per day",
+      "mediaType": "image"
+    },
+    {
+      "id": "2",
+      "src": "https://images.unsplash.com/photo-1496861083958-175bb1bd5702",
+      "alt": "White Fabric Flower",
       "title": "White Fabric Flower",
-      "price": "Enquire",
-      "mediaType": "image",
-      "src": "/gallery/flower-rentals/1_moving_fabric_flowers.jpg"
+      "description": "Elegant white fabric flower with LED lighting options",
+      "date": "2024-02-15",
+      "sequence": 1,
+      "price": "R1800 per day",
+      "mediaType": "image"
     },
     {
-      "id": 2,
-      "title": "Blue Night Flower",
-      "price": "Enquire",
-      "mediaType": "image",
-      "src": "/gallery/flower-rentals/2_paper_rental.jpg"
-    },
-    {
-      "id": 3,
-      "title": "Red, White, Blue Flower",
-      "price": "Enquire",
-      "mediaType": "image",
-      "src": "/gallery/flower-rentals/3_flower_rental.jpg"
-    },
-    {
-      "id": 4,
-      "title": "Blue, Pink, White Flower",
-      "price": "Enquire",
-      "mediaType": "image",
-      "src": "/gallery/flower-rentals/4_flower_rental.jpg"
+      "id": "3",
+      "src": "https://images.unsplash.com/photo-1457089328109-e5d9bd499191",
+      "alt": "Purple Lotus Installation",
+      "title": "Purple Lotus Installation",
+      "description": "Giant purple lotus flower with color-changing lights",
+      "date": "2024-02-15",
+      "sequence": 2,
+      "price": "R3000 per day",
+      "mediaType": "image"
     }
   ]
 }
-

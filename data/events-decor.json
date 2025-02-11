@@ -1,124 +1,31 @@
 {
   "items": [
-      {
-        "id": 1,
-        "src": "/gallery/events-decor/10_TWENTY_HATS.jpg",
-        "alt": "Twenty Roses",
-        "title": "Twenty Roses",
-        "date": "2024-05-11",
-        "description": "A vibrant display of twenty decorative roses arranged for a themed event."
-      },
-      {
-        "id": 3,
-        "src": "/gallery/events-decor/12_PAPERFLOWERS_XXL.jpg",
-        "alt": "XXL Paper Flowers",
-        "title": "XXL Paper Flowers",
-        "date": "2024-02-10",
-        "description": "Extra-large paper flowers crafted for dramatic decor and impact."
-      },
-      {
-        "id": 5,
-        "src": "/gallery/events-decor/14_PAPEREVENTDECOR.jpg",
-        "alt": "Paper Event Decor",
-        "title": "Paper Event Decor",
-        "date": "2023-11-19",
-        "description": "Intricately designed paper decorations tailored for a special event."
-      },
-      {
-        "id": 6,
-        "src": "/gallery/events-decor/15_WEDDING_DECOR.jpg",
-        "alt": "Wedding Decor",
-        "title": "Wedding Decor",
-        "date": "2024-06-21",
-        "description": "Beautiful decorations designed for an elegant wedding celebration."
-      },
-      {
-        "id": 7,
-        "src": "/gallery/events-decor/17_GIANT_HANGING_FLOWER_INSTALLATION.jpg",
-        "alt": "Giant Hanging Flower Installation",
-        "title": "Giant Hanging Flower Installation",
-        "date": "2024-03-07",
-        "description": "A stunning installation featuring giant flowers suspended from above."
-      },
-      {
-        "id": 9,
-        "src": "/gallery/events-decor/18_TABLE_DECOR.jpg",
-        "alt": "Table Decor",
-        "title": "Table Decor",
-        "date": "2024-09-12",
-        "description": "Elegantly arranged table decor with a focus on sophistication and style."
-      },
-      {
-        "id": 11,
-        "src": "/gallery/events-decor/1_GIANT_FLOWERS_SANDTON_CONVENTION_CENTRE.jpg",
-        "alt": "Giant Flowers at Sandton Convention Centre",
-        "title": "Giant Flowers - Sandton Convention Centre",
-        "date": "2023-12-02",
-        "description": "Spectacular giant flowers displayed at the Sandton Convention Centre."
-      },
-      {
-        "id": 12,
-        "src": "/gallery/events-decor/2_BRUTALFRUITFABRICFLOWERS.jpg",
-        "alt": "Brutal Fruit Fabric Flowers",
-        "title": "Brutal Fruit Fabric Flowers",
-        "date": "2024-07-04",
-        "description": "Custom fabric flowers designed for the Brutal Fruit brand event."
-      },
-      {
-        "id": 13,
-        "src": "/gallery/events-decor/3_BRUTALFRUITFABRICFLOWERS.jpg",
-        "alt": "Brutal Fruit Fabric Flowers",
-        "title": "Brutal Fruit Fabric Flowers",
-        "date": "2023-11-10",
-        "description": "Another variation of fabric flowers made for Brutal Fruit."
-      },
-      {
-        "id": 14,
-        "src": "/gallery/events-decor/4B_BRUTAL_FRUIT_FABRIC_FLOWERS.jpg",
-        "alt": "Brutal Fruit Fabric Flowers Variant B",
-        "title": "Brutal Fruit Fabric Flowers - Variant B",
-        "date": "2024-05-22",
-        "description": "Alternative design of fabric flowers created for Brutal Fruit."
-      },
-      {
-        "id": 15,
-        "src": "/gallery/events-decor/5B_GIANT_BUTTERFLY_INSTALLATION.jpg",
-        "alt": "Giant Butterfly Installation",
-        "title": "Giant Butterfly Installation",
-        "date": "2024-03-30",
-        "description": "A large butterfly installation adding a whimsical touch to the event decor."
-      },
-      {
-        "id": 16,
-        "src": "/gallery/events-decor/6B-RUNWAY_STAGE_DECOR.jpg",
-        "alt": "Runway Stage Decor",
-        "title": "Runway Stage Decor",
-        "date": "2024-06-11",
-        "description": "Decorations designed to enhance the runway stage with elegance."
-      },
-      {
-        "id": 17,
-        "src": "/gallery/events-decor/7-3D_MODEL-TABLE DECOR.jpg",
-        "alt": "3D Model of Table Decor",
-        "title": "3D Model - Table Decor",
-        "date": "2024-02-27",
-        "description": "A 3D model created to plan the arrangement of table decor."
-      },
-      {
-        "id": 18,
-        "src": "/gallery/events-decor/8-TABLEDECOR.jpg",
-        "alt": "Table Decor",
-        "title": "Table Decor",
-        "date": "2024-04-03",
-        "description": "Stylish and sophisticated table decor for a formal event."
-      },
-      {
-        "id": 19,
-        "src": "/gallery/events-decor/9_NANDOS_CONFERENCE.jpg",
-        "alt": "Nando's Conference Decor",
-        "title": "Nando's Conference Decor",
-        "date": "2023-11-21",
-        "description": "Custom decor arranged for a Nando's conference event."
-      }
+    {
+      "id": "4",
+      "src": "https://images.unsplash.com/photo-1519225421980-715cb0215aed",
+      "alt": "Wedding Floral Arch",
+      "title": "Wedding Floral Arch",
+      "description": "Stunning floral arch perfect for wedding ceremonies",
+      "date": "2024-02-15",
+      "sequence": 0
+    },
+    {
+      "id": "5",
+      "src": "https://images.unsplash.com/photo-1519225421980-715cb0215aed",
+      "alt": "Corporate Event Setup",
+      "title": "Corporate Event Setup",
+      "description": "Modern and elegant corporate event decoration",
+      "date": "2024-02-15",
+      "sequence": 1
+    },
+    {
+      "id": "6",
+      "src": "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3",
+      "alt": "Birthday Party Theme",
+      "title": "Birthday Party Theme",
+      "description": "Colorful and festive birthday party decoration",
+      "date": "2024-02-15",
+      "sequence": 2
+    }
   ]
 }

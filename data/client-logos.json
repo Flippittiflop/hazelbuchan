@@ -1,25 +1,25 @@
 {
   "items": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Client 1",
       "logo": "/client-logo-1.svg",
       "url": "https://client1.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Client 2",
       "logo": "/client-logo-2.svg",
       "url": "https://client2.com"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Client 3",
       "logo": "/client-logo-3.svg",
       "url": "https://client3.com"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Client 4",
       "logo": "/client-logo-4.svg",
       "url": "https://client4.com"

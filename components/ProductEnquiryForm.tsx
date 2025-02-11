@@ -20,7 +20,7 @@ interface Product {
 
 interface ProductEnquiryFormProps {
   selectedProducts: Product[];
-  onRemoveProduct: (id: number) => void;
+  onRemoveProduct: (id: string) => void;
   onSubmit: (data: EnquiryFormData) => void;
 }
 
