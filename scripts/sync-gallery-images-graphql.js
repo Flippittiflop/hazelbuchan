@@ -217,8 +217,8 @@ async function syncGalleryImages(config) {
 }
 
 if (require.main === module) {
-    const galleryType = process.argv[2];
-    const categoryName = process.argv[3] || galleryType;
+    const categoryName = process.argv[2];
+    const galleryType = process.argv[3] || categoryName;
     const bucketName = process.env.GALLERY_BUCKET_NAME;
 
     if (!galleryType || !bucketName || !APPSYNC_ENDPOINT || !APPSYNC_API_KEY) {
