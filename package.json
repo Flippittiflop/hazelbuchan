@@ -10,7 +10,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "validate-links": "node scripts/validate-links.js",
-    "sync-gallery": "node scripts/sync-gallery-images.js"
+    "sync-gallery": "node scripts/sync-gallery-images-graphql.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

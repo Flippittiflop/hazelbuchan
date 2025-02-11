@@ -9,6 +9,8 @@ env:
     CLOUDFRONT_DISTRIBUTION_ID: /CodeBuild/hbdesign/${ENV}/cloudfront_id
     GITHUB_TOKEN: /hbdesign/github_token
     GALLERY_BUCKET_NAME: /CodeBuild/hbdesign/${ENV}/gallery_bucket
+    APPSYNC_API_KEY: /CodeBuild/hbdesign/${ENV}/appsync_api_key
+    APPSYNC_URL: /CodeBuild/hbdesign/${ENV}/appsync_url
 phases:
   install:
     runtime-versions:
