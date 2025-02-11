@@ -37,7 +37,7 @@ const FeaturedWorks = ({ items }: FeaturedWorksProps) => {
                     className="text-2xl font-semibold"
                     initial={{ opacity: 0, y: 20 }}
                     animate={isWorksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.3 }}
                 >
                     Featured Works
                 </motion.h2>
