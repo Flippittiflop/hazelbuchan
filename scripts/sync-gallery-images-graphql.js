@@ -3,7 +3,6 @@ const { writeFileSync, mkdirSync, existsSync, createWriteStream } = require('fs'
 const { join } = require('path');
 const { finished } = require('stream/promises');
 
-// Use the parameter store names directly
 const APPSYNC_ENDPOINT = process.env.APPSYNC_URL;
 const APPSYNC_API_KEY = process.env.APPSYNC_API_KEY;
 
@@ -43,7 +42,6 @@ async function fetchCategoryData(categoryName) {
     };
 
     try {
-        // Dynamic import of node-fetch
         const fetch = (await import('node-fetch')).default;
 
         const response = await fetch(APPSYNC_ENDPOINT, {
@@ -87,7 +85,7 @@ async function downloadImage(client, bucket, key, outputPath) {
     }
 }
 
-function createItemFromMetadata(type, image, id) {
+function createItemFromGraphQL(image, normalizedCategory) {
     if (!image.isActive) return null;
 
     let metadata;
@@ -98,64 +96,29 @@ function createItemFromMetadata(type, image, id) {
         return null;
     }
 
-    // Normalize the type for file paths
-    const normalizedType = normalizeCategory(type);
+    const filename = image.s3Key.split('/').pop();
 
-    const baseItem = {
-        id,
-        src: `/gallery/${normalizedType}/${image.s3Key.split('/').pop()}`,
+    return {
+        id: image.id,
+        src: `/gallery/${normalizedCategory}/${filename}`,
         alt: metadata.title || 'No Title',
-        sequence: image.sequence
+        title: metadata.title,
+        description: metadata.description,
+        date: new Date(image.createdAt).toISOString().split('T')[0],
+        sequence: image.sequence,
+        ...metadata // Spread the rest of the metadata fields
     };
-
-    // Use normalized category names for switch cases
-    switch (normalizedType) {
-        case 'flower-rentals':
-            return {
-                ...baseItem,
-                title: metadata.title,
-                price: metadata.price || 'Enquire',
-                mediaType: metadata.mediaType || 'image',
-                mediaUrl: baseItem.src
-            };
-
-        case 'events-decor':
-        case 'illustration':
-        case 'paper-sculpture':
-            return {
-                ...baseItem,
-                title: metadata.title,
-                date: new Date(image.createdAt).toISOString().split('T')[0],
-                description: metadata.description || 'No description available'
-            };
-
-        case 'featured':
-            return {
-                ...baseItem,
-                title: metadata.title,
-                date: new Date(image.createdAt).toISOString().split('T')[0],
-                description: metadata.description || 'No description available',
-                category: metadata.category || 'Other'
-            };
-
-        default:
-            return {
-                ...baseItem,
-                title: metadata.title
-            };
-    }
 }
 
 async function syncGalleryImages(config) {
     console.log('Starting sync with config:', config);
     const client = new S3Client({});
     const items = [];
-    let id = 1;
 
-    // Normalize the gallery type for file system operations
-    const normalizedGalleryType = normalizeCategory(config.galleryType);
+    // Normalize category name for filesystem operations
+    const normalizedCategory = normalizeCategory(config.categoryName);
 
-    const publicGalleryPath = join(process.cwd(), 'public', 'gallery', normalizedGalleryType);
+    const publicGalleryPath = join(process.cwd(), 'public', 'gallery', normalizedCategory);
     const dataPath = join(process.cwd(), 'data');
 
     // Ensure directories exist
@@ -167,7 +130,6 @@ async function syncGalleryImages(config) {
     });
 
     try {
-        // Fetch category data from AppSync using original case
         const categoryData = await fetchCategoryData(config.categoryName);
         if (!categoryData) {
             console.log(`No category found with name: ${config.categoryName}`);
@@ -190,8 +152,8 @@ async function syncGalleryImages(config) {
                 // Download the image from S3
                 await downloadImage(client, config.bucketName, image.s3Key, outputPath);
 
-                // Process metadata and create item
-                const item = createItemFromMetadata(config.galleryType, image, id++);
+                // Create flattened item from GraphQL data
+                const item = createItemFromGraphQL(image, normalizedCategory);
                 if (item) {
                     items.push(item);
                     console.log(`Processed: ${filename}`);
@@ -205,11 +167,11 @@ async function syncGalleryImages(config) {
         // Sort items by sequence
         items.sort((a, b) => a.sequence - b.sequence);
 
-        // Write output file using normalized name
-        const outputPath = join(dataPath, `${normalizedGalleryType}.json`);
+        // Write output file using normalized category name
+        const outputPath = join(dataPath, `${normalizedCategory}.json`);
         writeFileSync(outputPath, JSON.stringify({ items }, null, 2));
 
-        console.log(`Successfully synced ${items.length} items for ${normalizedGalleryType}`);
+        console.log(`Successfully synced ${items.length} items for ${normalizedCategory}`);
     } catch (error) {
         console.error('Sync failed:', error);
         throw error;
@@ -218,24 +180,22 @@ async function syncGalleryImages(config) {
 
 if (require.main === module) {
     const categoryName = process.argv[2];
-    const galleryType = process.argv[3] || categoryName;
     const bucketName = process.env.GALLERY_BUCKET_NAME;
 
-    if (!galleryType || !bucketName || !APPSYNC_ENDPOINT || !APPSYNC_API_KEY) {
+    if (!categoryName || !bucketName || !APPSYNC_ENDPOINT || !APPSYNC_API_KEY) {
         console.error(`
 Usage: 
 GALLERY_BUCKET_NAME=mybucket 
 APPSYNC_ENDPOINT=https://xxx.appsync-api.region.amazonaws.com/graphql 
 APPSYNC_API_KEY=da2-xxx 
-npm run sync-gallery -- gallery-type category-name
+npm run sync-gallery -- category-name
     `);
         process.exit(1);
     }
 
     syncGalleryImages({
         bucketName,
-        galleryType: galleryType,
-        categoryName: categoryName
+        categoryName
     }).catch(error => {
         console.error('Sync failed:', error);
         process.exit(1);

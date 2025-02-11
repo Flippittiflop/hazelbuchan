@@ -5,28 +5,28 @@
       "title": "White Fabric Flower",
       "price": "Enquire",
       "mediaType": "image",
-      "mediaUrl": "/gallery/flower-rentals/1_moving_fabric_flowers.jpg"
+      "src": "/gallery/flower-rentals/1_moving_fabric_flowers.jpg"
     },
     {
       "id": 2,
       "title": "Blue Night Flower",
       "price": "Enquire",
       "mediaType": "image",
-      "mediaUrl": "/gallery/flower-rentals/2_paper_rental.jpg"
+      "src": "/gallery/flower-rentals/2_paper_rental.jpg"
     },
     {
       "id": 3,
       "title": "Red, White, Blue Flower",
       "price": "Enquire",
       "mediaType": "image",
-      "mediaUrl": "/gallery/flower-rentals/3_flower_rental.jpg"
+      "src": "/gallery/flower-rentals/3_flower_rental.jpg"
     },
     {
       "id": 4,
       "title": "Blue, Pink, White Flower",
       "price": "Enquire",
       "mediaType": "image",
-      "mediaUrl": "/gallery/flower-rentals/4_flower_rental.jpg"
+      "src": "/gallery/flower-rentals/4_flower_rental.jpg"
     }
   ]
 }

@@ -9,7 +9,7 @@ interface Product {
   title: string;
   price: string;
   mediaType: "video" | "image";
-  mediaUrl: string;
+  src: string;
 }
 
 interface ProductGridProps {
@@ -28,13 +28,13 @@ export default function ProductGrid({ products, onAddToEnquiry, selectedProductI
             <div
                 className="relative aspect-[2/1] cursor-pointer"
                 onClick={() => setSelectedImage({
-                  src: product.mediaUrl,
+                  src: product.src,
                   alt: product.title
                 })}
             >
               {product.mediaType === 'video' ? (
                   <video
-                      src={product.mediaUrl}
+                      src={product.src}
                       autoPlay
                       loop
                       muted
@@ -43,7 +43,7 @@ export default function ProductGrid({ products, onAddToEnquiry, selectedProductI
                   />
               ) : (
                   <Image
-                      src={product.mediaUrl}
+                      src={product.src}
                       alt={product.title}
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-300"

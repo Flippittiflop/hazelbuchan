@@ -15,7 +15,7 @@ interface Product {
   title: string;
   price: string;
   mediaType: "video" | "image";
-  mediaUrl: string;
+  src: string;
 }
 
 interface ProductEnquiryFormProps {
