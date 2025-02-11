@@ -10,7 +10,7 @@ import productsData from '@/data/flower-rentals.json';
 import videoSources from '@/data/flower-videos.json';
 
 type Product = {
-    id: number;
+    id: string;
     title: string;
     price: string;
     mediaType: "video" | "image";
