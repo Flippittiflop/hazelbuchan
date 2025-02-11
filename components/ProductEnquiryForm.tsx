@@ -11,7 +11,7 @@ interface EnquiryFormData {
 }
 
 interface Product {
-  id: number;
+  id: string;
   title: string;
   price: string;
   mediaType: "video" | "image";
