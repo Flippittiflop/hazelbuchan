@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Change to string productId">
+    <list default="true" id="751c8d98-172f-4984-89e2-ec81009845bb" name="Changes" comment="Removed extra R from the data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/paper-advertising/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/paper-events/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/EnquiryModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/EnquiryModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/FeaturedWorks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedWorks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ProductEnquiryForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductEnquiryForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ProductGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductGrid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/client-logos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/client-logos.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/events-decor.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/events-decor.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/featured.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/featured.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/flower-rentals.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/flower-rentals.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/illustration.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/illustration.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/paper-sculpture.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/paper-sculpture.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +126,7 @@
       <workItem from="1738998937914" duration="4384000" />
       <workItem from="1739120124188" duration="611000" />
       <workItem from="1739211316223" duration="333000" />
-      <workItem from="1739286566864" duration="8259000" />
+      <workItem from="1739286566864" duration="9387000" />
     </task>
     <task id="LOCAL-00001" summary="Stable website">
       <option name="closed" value="true" />
@@ -483,7 +472,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739294105340</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="number to string conversions">
+      <option name="closed" value="true" />
+      <created>1739294883677</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1739294883677</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Removed extra R from the data">
+      <option name="closed" value="true" />
+      <created>1739295552945</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1739295552945</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,8 +528,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changed jest.config file" />
-    <MESSAGE value="build and deploy" />
     <MESSAGE value="Removed cypress for now" />
     <MESSAGE value="Added pre-build for google measurement_id" />
     <MESSAGE value="Attempting dynamically pulling images from S3" />
@@ -548,7 +551,9 @@
     <MESSAGE value="Test with new syncing with dynamo instead of S3" />
     <MESSAGE value="Test with new syncing with dynamo instead of S3 change datatype id to string products" />
     <MESSAGE value="Change to string productId" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change to string productId" />
+    <MESSAGE value="number to string conversions" />
+    <MESSAGE value="Removed extra R from the data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed extra R from the data" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
